@@ -16001,7 +16001,7 @@ body {
   margin: 0;
 }
 .main__subtitle {
-  font-size: 0.8em;
+  font-size: 1em;
   position: relative;
 }
 .main__subtitle:before {
@@ -16049,17 +16049,29 @@ body {
 .header__nav ul li:last-child {
   margin-right: 0;
 }
-.header__nav ul li.active a {
-  text-shadow: 2px 2px 15px rgba(255, 185, 39, 0.3), -2px -2px 15px rgba(255, 185, 39, 0.3), 2px -2px 15px rgba(255, 185, 39, 0.3), -2px 2px 15px rgba(255, 185, 39, 0.3);
+.header__nav ul li.active a:after {
+  background-color: #0d0b0a;
 }
 .header__nav ul li a {
   color: #0d0b0a;
   text-decoration: none;
   -webkit-transition: text-shadow 0.3s ease;
   transition: text-shadow 0.3s ease;
+  position: relative;
 }
-.header__nav ul li:hover a {
-  text-shadow: 2px 2px 15px rgba(255, 185, 39, 0.3), -2px -2px 15px rgba(255, 185, 39, 0.3), 2px -2px 15px rgba(255, 185, 39, 0.3), -2px 2px 15px rgba(255, 185, 39, 0.3);
+.header__nav ul li a:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+  background-color: transparent;
 }
 .header__nav ul::before, .header__nav ul::after {
   content: "~";
@@ -16076,6 +16088,46 @@ body {
   -webkit-transform: scale(-1, 1);
           transform: scale(-1, 1);
 }
+@media (max-width: 992px) {
+  .header__nav ul {
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .header__nav {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-transition: height 0.4s ease, opacity 0.4s ease;
+    transition: height 0.4s ease, opacity 0.4s ease;
+  }
+  .header__nav ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 24px;
+    height: 100%;
+  }
+  .header__nav ul li {
+    margin: 0;
+    margin: 1em 0;
+  }
+  .header__nav ul::before, .header__nav ul::after {
+    margin: 0;
+  }
+}
+@media (max-width: 768px) and (max-width: 576px) {
+  .header__nav ul {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .header__nav.active {
+    height: calc(100vh - 67px);
+    opacity: 1;
+  }
+}
 
 .time {
   padding: 12em 0;
@@ -16091,7 +16143,6 @@ body {
   text-align: center;
   font-size: 5.6em;
   margin-bottom: 2em;
-  text-shadow: 2px 2px 15px rgba(255, 185, 39, 0.3), -2px -2px 15px rgba(255, 185, 39, 0.3), 2px -2px 15px rgba(255, 185, 39, 0.3), -2px 2px 15px rgba(255, 185, 39, 0.3);
   position: relative;
 }
 .time__title:after {
@@ -16110,6 +16161,16 @@ body {
   .time__title:after {
     bottom: -2.2em;
   }
+}
+
+.burger {
+  font-size: 24px;
+  cursor: pointer;
+  text-align: right;
+}
+.burger i {
+  -webkit-animation-duration: 0.15s;
+          animation-duration: 0.15s;
 }
 
 .hide {
@@ -20947,7 +21008,6 @@ body:not(.is-using-mouse) .fancybox__container :focus {
           align-items: center;
   font-size: 5em;
   font-weight: 700;
-  text-shadow: 2px 2px 15px rgba(255, 185, 39, 0.3), -2px -2px 15px rgba(255, 185, 39, 0.3), 2px -2px 15px rgba(255, 185, 39, 0.3), -2px 2px 15px rgba(255, 185, 39, 0.3);
 }
 @media (max-width: 768px) {
   .lightcountdown {

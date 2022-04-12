@@ -3268,6 +3268,56 @@ var useObserver = function useObserver(node, callback) {
 
 /***/ }),
 
+/***/ "./src/components/burger.js":
+/*!**********************************!*\
+  !*** ./src/components/burger.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var active = false;
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  return document.addEventListener('DOMContentLoaded', function () {
+    var burger = document.getElementById('burger');
+    var header = document.getElementById('header-nav');
+    var i = burger.querySelector('i');
+    burger.addEventListener('click', function () {
+      active = !active;
+      header.classList.toggle('active');
+      i.classList.remove('animate__fadeIn');
+
+      if (active) {
+        i.classList.add('animate__fadeOut');
+
+        var handler = function handler() {
+          i.classList.remove('fa-bars');
+          i.classList.remove('animate__fadeOut');
+          i.classList.add('animate__fadeIn');
+          i.removeEventListener(handler, null);
+          i.classList.add('fa-times');
+        };
+
+        i.addEventListener('animationend', handler);
+      } else {
+        i.classList.add('animate__fadeOut');
+
+        var _handler = function _handler() {
+          i.classList.remove('fa-times');
+          i.classList.remove('animate__fadeOut');
+          i.classList.add('animate__fadeIn');
+          i.removeEventListener(_handler, null);
+          i.classList.add('fa-bars');
+        };
+
+        i.addEventListener('animationend', _handler);
+      }
+    });
+  });
+});
+
+/***/ }),
+
 /***/ "./src/components/header.js":
 /*!**********************************!*\
   !*** ./src/components/header.js ***!
@@ -11666,6 +11716,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_animation__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/animation */ "./src/components/animation.js");
 /* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/header */ "./src/components/header.js");
 /* harmony import */ var _libs_lightcountdown_v1_2_countdown__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./libs/lightcountdown_v1_2/countdown */ "./src/libs/lightcountdown_v1_2/countdown.js");
+/* harmony import */ var _components_burger__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/burger */ "./src/components/burger.js");
+
 
 
 
@@ -11688,6 +11740,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_components_header__WEBPACK_IMPORTED_MODULE_17__.default)();
 (0,_components_animation__WEBPACK_IMPORTED_MODULE_16__.default)();
 (0,_libs_lightcountdown_v1_2_countdown__WEBPACK_IMPORTED_MODULE_18__.default)();
+(0,_components_burger__WEBPACK_IMPORTED_MODULE_19__.default)();
 }();
 /******/ })()
 ;
