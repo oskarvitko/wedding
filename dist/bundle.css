@@ -15932,6 +15932,11 @@ body {
   font-family: "Playfair Display", serif;
   font-style: italic;
 }
+@media (max-width: 768px) {
+  body.overflowed {
+    overflow: hidden;
+  }
+}
 
 .main {
   background: url("../assets/images/main/main-bg.jpg") center no-repeat;
@@ -15979,7 +15984,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   color: #dbdbdb;
-  padding-top: 15vh;
+  padding-top: 10vh;
   text-shadow: #c2c2c2 2px 2px 3px;
   font-style: italic;
   text-align: center;
@@ -16024,6 +16029,25 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
+}
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 0 12px 0;
+  }
+}
+.header__mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.header__mobile img {
+  width: 35px;
 }
 .header__nav ul {
   padding: 0;
@@ -16121,10 +16145,13 @@ body {
   .header__nav ul {
     font-size: 20px;
   }
+  .header__nav ul li {
+    margin: 0.6em 0;
+  }
 }
 @media (max-width: 768px) {
   .header__nav.active {
-    height: calc(100vh - 67px);
+    height: calc(100vh - 58px);
     opacity: 1;
   }
 }

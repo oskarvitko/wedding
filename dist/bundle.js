@@ -3285,6 +3285,7 @@ var active = false;
     burger.addEventListener('click', function () {
       active = !active;
       header.classList.toggle('active');
+      document.body.classList.toggle('overflowed');
       i.classList.remove('animate__fadeIn');
 
       if (active) {
