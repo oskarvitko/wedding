@@ -15954,18 +15954,6 @@ body {
   z-index: 0;
   background: rgba(0, 0, 0, 0.2);
 }
-.main::before {
-  display: block;
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 1;
-  height: 20vh;
-  background: -webkit-gradient(linear, left bottom, left top, from(#fff), to(transparent));
-  background: linear-gradient(to top, #fff, transparent);
-}
 .main__inner {
   position: relative;
   z-index: 2;
@@ -15978,13 +15966,13 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 120vh;
+  height: 100vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   color: #dbdbdb;
-  padding-top: 10vh;
+  padding-top: 30vh;
   text-shadow: #c2c2c2 2px 2px 3px;
   font-style: italic;
   text-align: center;
@@ -16034,20 +16022,6 @@ body {
   .header {
     padding: 10px 0 12px 0;
   }
-}
-.header__mobile {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.header__mobile img {
-  width: 35px;
 }
 .header__nav ul {
   padding: 0;
@@ -16158,36 +16132,39 @@ body {
 
 .time {
   padding: 12em 0;
-  color: #0d0b0a;
+  color: #dbdbdb;
   font-size: 16px;
+  background: url("../assets/images/time/bg.jpg") center no-repeat;
+  background-size: cover;
+  color: #dbdbdb;
+  text-shadow: #4e4848 2px 2px 3px;
+  position: relative;
 }
 @media (max-width: 992px) {
   .time {
     font-size: 1.5vw;
   }
 }
-.time__title {
-  text-align: center;
-  font-size: 5.6em;
-  margin-bottom: 2em;
-  position: relative;
-}
-.time__title:after {
+.time::after {
   display: block;
   content: "";
   position: absolute;
-  bottom: -1.4em;
-  left: 0;
+  top: 0;
   right: 0;
-  z-index: 1;
-  height: 100px;
-  background: transparent url("../assets/images/time/uzor.png") center no-repeat;
-  background-size: 30%;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.3);
 }
-@media (max-width: 576px) {
-  .time__title:after {
-    bottom: -2.2em;
-  }
+.time__inner {
+  position: relative;
+  z-index: 1;
+}
+.time__title {
+  text-align: center;
+  font-size: 4.7em;
+  margin-bottom: 1em;
+  position: relative;
 }
 
 .burger {
@@ -16198,6 +16175,75 @@ body {
 .burger i {
   -webkit-animation-duration: 0.15s;
           animation-duration: 0.15s;
+}
+
+.dear {
+  padding: 5rem 0;
+  text-align: center;
+  background-color: #e2d2d1;
+  font-size: 1rem;
+}
+.dear__title {
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 2em;
+}
+.dear__text {
+  font-weight: 500;
+  font-size: 1.4em;
+}
+
+.galery {
+  padding: 5rem 0;
+  background-color: #e2d2d1;
+  text-align: center;
+  font-size: 1rem;
+}
+.galery__title {
+  font-size: 4em;
+  margin-bottom: 5rem;
+}
+@media (max-width: 576px) {
+  .galery {
+    font-size: 10vw;
+    padding: 3rem 0;
+  }
+  .galery__title {
+    margin-bottom: 3rem;
+    font-size: 1em;
+  }
+}
+.galery__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1vw;
+}
+.galery__inner-item {
+  width: 32.5%;
+  margin-top: 1vw;
+  overflow: hidden;
+  cursor: pointer;
+}
+.galery__inner-item img {
+  width: 100%;
+  -webkit-transition: -webkit-transform 5s linear;
+  transition: -webkit-transform 5s linear;
+  transition: transform 5s linear;
+  transition: transform 5s linear, -webkit-transform 5s linear;
+}
+.galery__inner-item img:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
 }
 
 .hide {
@@ -21033,7 +21079,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 5em;
+  font-size: 4em;
   font-weight: 700;
 }
 @media (max-width: 768px) {
@@ -21074,11 +21120,9 @@ body:not(.is-using-mouse) .fancybox__container :focus {
           justify-content: center;
   padding: 0 4px;
   width: 0.73em;
-  color: #0d0b0a;
 }
 
 .lightcountdown__delimeter {
-  color: #0d0b0a;
   margin-bottom: 0.6em;
 }
 

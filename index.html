@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
@@ -17,54 +16,138 @@
     <meta property="og:url" content="" />
     <meta property="og:type" content="website" />
 
-    <title>
-        Приглашение на свадьбу
-    </title>
+    <title>Приглашение на свадьбу</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-</head>
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <header id="header" class="header">
-        <div class="container">
-            <div class="header__mobile d-md-none">
-                <img src="./favicon.ico" alt="">
-                <div id="burger" class="burger">
-                    <i class="fa fa-bars animate__animated" aria-hidden="true"></i>
-                </div>
-            </div>
-            <nav id="header-nav" class="header__nav">
-                <ul>
-                    <li class="header__nav-link"><a href="#section-main">Молодожены</a>
-                    </li>
-                    <li class="header__nav-link"><a href="#">Дресс-код</a></li>
-                    <li class="header__nav-link"><a href="#">Участие</a></li>
-                    <li class="header__nav-link"><a href="#">Фотографии</a></li>
-                    <li class="header__nav-link"><a href="#">Контакты</a></li>
-                </ul>
-            </nav>
+      <div class="container">
+        <div id="burger" class="burger d-md-none">
+          <i class="fa fa-bars animate__animated" aria-hidden="true"></i>
         </div>
+        <nav id="header-nav" class="header__nav">
+          <ul>
+            <li class="header__nav-link">
+              <a href="#section-main">Молодожены</a>
+            </li>
+            <li class="header__nav-link">
+              <a href="#section-galery">Фотографии</a>
+            </li>
+            <li class="header__nav-link"><a href="#asd">Дресс-код</a></li>
+            <li class="header__nav-link"><a href="#asd">Участие</a></li>
+            <li class="header__nav-link"><a href="#asd">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main id="section-main" class="main">
-        <div class="container">
-            <div class="main__inner">
-                <h1 class="main__title">Оскар & Агнесса</h1>
-                <h2 class="main__subtitle">Витко</h2>
-            </div>
+      <div class="container">
+        <div class="main__inner">
+          <h1 class="main__title">Оскар & Агнесса</h1>
+          <h2 class="main__subtitle">Витко</h2>
         </div>
+      </div>
     </main>
+
+    <section id="section-dear" class="dear">
+      <div class="container">
+        <h2 class="dear__title">Дорогие!</h2>
+        <p class="dear__text">
+          Вы получили эту ссылку, а значит мы спешим сообщить Вам важную
+          новость!<br />
+          <b>Мы женимся!</b><br />
+          Будем очень рады вас видеть рядом в этот особенный день для нас.<br />
+          Наша свадьба состоится <b>29 мая 2022 года!</b>
+        </p>
+      </div>
+    </section>
     <section id="section-time" class="time">
-        <div class="container">
-            <h2 id="time-title" class="time__title">Наша свадьба через</h2>
-            <div id="time-count" class="countdown-week"></div>
+      <div class="container">
+        <div class="time__inner">
+          <h2 id="time-title" class="time__title">До свадьбы осталось:</h2>
+          <div id="time-count" class="countdown-week"></div>
         </div>
+      </div>
+    </section>
+    <section id="section-galery" class="galery">
+      <h2 class="galery__title">Наши фотки</h2>
+      <div class="galery__inner">
+        <div class="galery__inner-item">
+          <img
+            data-fancybox="galery"
+            src="./assets/images/galery/1.jpg"
+            alt=""
+          />
+        </div>
+        <div class="galery__inner-item">
+          <img
+            data-fancybox="galery"
+            src="./assets/images/galery/2.jpg"
+            alt=""
+          />
+        </div>
+        <div class="galery__inner-item">
+          <img
+            data-fancybox="galery"
+            src="./assets/images/galery/3.jpg"
+            alt=""
+          />
+        </div>
+        <div class="galery__inner-item">
+          <img
+            data-fancybox="galery"
+            src="./assets/images/galery/4.jpg"
+            alt=""
+          />
+        </div>
+        <div class="galery__inner-item">
+          <img
+            data-fancybox="galery"
+            src="./assets/images/galery/5.jpg"
+            alt=""
+          />
+        </div>
+        <div class="galery__inner-item">
+          <img
+            data-fancybox="galery"
+            src="./assets/images/galery/6.jpg"
+            alt=""
+          />
+        </div>
+        <div class="galery__inner-item">
+          <img
+            data-fancybox="galery"
+            src="./assets/images/galery/7.jpg"
+            alt=""
+          />
+        </div>
+        <div class="galery__inner-item">
+          <img
+            data-fancybox="galery"
+            src="./assets/images/galery/8.jpg"
+            alt=""
+          />
+        </div>
+        <div class="galery__inner-item">
+          <img
+            data-fancybox="galery"
+            src="./assets/images/galery/9.jpg"
+            alt=""
+          />
+        </div>
+      </div>
     </section>
     <script src="./dist/bundle.js"></script>
-</body>
-
+  </body>
 </html>

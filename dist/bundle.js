@@ -3278,40 +3278,41 @@ var useObserver = function useObserver(node, callback) {
 __webpack_require__.r(__webpack_exports__);
 var active = false;
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return document.addEventListener('DOMContentLoaded', function () {
-    var burger = document.getElementById('burger');
-    var header = document.getElementById('header-nav');
-    var i = burger.querySelector('i');
-    burger.addEventListener('click', function () {
+  return document.addEventListener("DOMContentLoaded", function () {
+    var burger = document.getElementById("burger");
+    var header = document.getElementById("header-nav");
+    var i = burger.querySelector("i");
+    burger.addEventListener("click", function () {
       active = !active;
-      header.classList.toggle('active');
-      document.body.classList.toggle('overflowed');
-      i.classList.remove('animate__fadeIn');
+      header.classList.toggle("active");
+      document.body.classList.toggle("overflowed");
+      i.classList.remove("animate__fadeIn");
+      burger.classList.toggle("active");
 
       if (active) {
-        i.classList.add('animate__fadeOut');
+        i.classList.add("animate__fadeOut");
 
         var handler = function handler() {
-          i.classList.remove('fa-bars');
-          i.classList.remove('animate__fadeOut');
-          i.classList.add('animate__fadeIn');
+          i.classList.remove("fa-bars");
+          i.classList.remove("animate__fadeOut");
+          i.classList.add("animate__fadeIn");
           i.removeEventListener(handler, null);
-          i.classList.add('fa-times');
+          i.classList.add("fa-times");
         };
 
-        i.addEventListener('animationend', handler);
+        i.addEventListener("animationend", handler);
       } else {
-        i.classList.add('animate__fadeOut');
+        i.classList.add("animate__fadeOut");
 
         var _handler = function _handler() {
-          i.classList.remove('fa-times');
-          i.classList.remove('animate__fadeOut');
-          i.classList.add('animate__fadeIn');
+          i.classList.remove("fa-times");
+          i.classList.remove("animate__fadeOut");
+          i.classList.add("animate__fadeIn");
           i.removeEventListener(_handler, null);
-          i.classList.add('fa-bars');
+          i.classList.add("fa-bars");
         };
 
-        i.addEventListener('animationend', _handler);
+        i.addEventListener("animationend", _handler);
       }
     });
   });
@@ -3330,21 +3331,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _MainIntersectionObserver__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MainIntersectionObserver */ "./src/components/MainIntersectionObserver.js");
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return document.addEventListener('DOMContentLoaded', function () {
-    var links = document.querySelectorAll('.header__nav-link');
+  return document.addEventListener("DOMContentLoaded", function () {
+    var links = document.querySelectorAll(".header__nav-link");
+    var burger = document.getElementById("burger");
     Array.prototype.forEach.call(links, function (link) {
-      var a = link.querySelector('a');
-      var target = document.querySelector(a.getAttribute('href'));
+      var a = link.querySelector("a");
+      var target = document.querySelector(a.getAttribute("href"));
       if (!target) return;
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        var header = document.getElementById("header");
+        window.scrollTo(0, target.offsetTop - 58);
+
+        if (burger.classList.contains("active")) {
+          burger.click();
+        }
+      });
       var observer = new _MainIntersectionObserver__WEBPACK_IMPORTED_MODULE_0__.default(target, function (entry) {
         if (entry.isIntersecting) {
-          var prevLinks = document.querySelectorAll('.header__nav-link.active');
+          var prevLinks = document.querySelectorAll(".header__nav-link.active");
           Array.prototype.forEach.call(prevLinks, function (link) {
-            link.classList.remove('active');
+            link.classList.remove("active");
           });
-          link.classList.add('active');
+          link.classList.add("active");
         }
-      }, .85);
+      }, 0.85);
       observer.observe();
     });
   });
@@ -11362,61 +11373,6 @@ module.exports = __webpack_require__.p + "assets/fonts/fontawesome-webfont.woff2
 
 /***/ }),
 
-/***/ "./src/fonts/lato/Lato-Black.ttf":
-/*!***************************************!*\
-  !*** ./src/fonts/lato/Lato-Black.ttf ***!
-  \***************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-"use strict";
-module.exports = __webpack_require__.p + "assets/fonts/Lato-Black.ttf";
-
-/***/ }),
-
-/***/ "./src/fonts/lato/Lato-Bold.ttf":
-/*!**************************************!*\
-  !*** ./src/fonts/lato/Lato-Bold.ttf ***!
-  \**************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-"use strict";
-module.exports = __webpack_require__.p + "assets/fonts/Lato-Bold.ttf";
-
-/***/ }),
-
-/***/ "./src/fonts/lato/Lato-Light.ttf":
-/*!***************************************!*\
-  !*** ./src/fonts/lato/Lato-Light.ttf ***!
-  \***************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-"use strict";
-module.exports = __webpack_require__.p + "assets/fonts/Lato-Light.ttf";
-
-/***/ }),
-
-/***/ "./src/fonts/lato/Lato-Medium.ttf":
-/*!****************************************!*\
-  !*** ./src/fonts/lato/Lato-Medium.ttf ***!
-  \****************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-"use strict";
-module.exports = __webpack_require__.p + "assets/fonts/Lato-Medium.ttf";
-
-/***/ }),
-
-/***/ "./src/fonts/lato/Lato-Regular.ttf":
-/*!*****************************************!*\
-  !*** ./src/fonts/lato/Lato-Regular.ttf ***!
-  \*****************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-"use strict";
-module.exports = __webpack_require__.p + "assets/fonts/Lato-Regular.ttf";
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js ***!
@@ -11707,17 +11663,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var font_awesome_fonts_fontawesome_webfont_ttf__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! font-awesome/fonts/fontawesome-webfont.ttf */ "./node_modules/font-awesome/fonts/fontawesome-webfont.ttf");
 /* harmony import */ var font_awesome_fonts_fontawesome_webfont_woff__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! font-awesome/fonts/fontawesome-webfont.woff */ "./node_modules/font-awesome/fonts/fontawesome-webfont.woff");
 /* harmony import */ var font_awesome_fonts_fontawesome_webfont_woff2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! font-awesome/fonts/fontawesome-webfont.woff2 */ "./node_modules/font-awesome/fonts/fontawesome-webfont.woff2");
-/* harmony import */ var _fonts_lato_Lato_Black_ttf__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./fonts/lato/Lato-Black.ttf */ "./src/fonts/lato/Lato-Black.ttf");
-/* harmony import */ var _fonts_lato_Lato_Light_ttf__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./fonts/lato/Lato-Light.ttf */ "./src/fonts/lato/Lato-Light.ttf");
-/* harmony import */ var _fonts_lato_Lato_Bold_ttf__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./fonts/lato/Lato-Bold.ttf */ "./src/fonts/lato/Lato-Bold.ttf");
-/* harmony import */ var _fonts_lato_Lato_Medium_ttf__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./fonts/lato/Lato-Medium.ttf */ "./src/fonts/lato/Lato-Medium.ttf");
-/* harmony import */ var _fonts_lato_Lato_Regular_ttf__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./fonts/lato/Lato-Regular.ttf */ "./src/fonts/lato/Lato-Regular.ttf");
-/* harmony import */ var _fancyapps_ui__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fancyapps/ui */ "./node_modules/@fancyapps/ui/dist/fancybox.esm.js");
-/* harmony import */ var _fancyapps_ui_dist_fancybox_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fancyapps/ui/dist/fancybox.css */ "./node_modules/@fancyapps/ui/dist/fancybox.css");
-/* harmony import */ var _components_animation__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/animation */ "./src/components/animation.js");
-/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/header */ "./src/components/header.js");
-/* harmony import */ var _libs_lightcountdown_v1_2_countdown__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./libs/lightcountdown_v1_2/countdown */ "./src/libs/lightcountdown_v1_2/countdown.js");
-/* harmony import */ var _components_burger__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/burger */ "./src/components/burger.js");
+/* harmony import */ var _fancyapps_ui__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fancyapps/ui */ "./node_modules/@fancyapps/ui/dist/fancybox.esm.js");
+/* harmony import */ var _fancyapps_ui_dist_fancybox_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fancyapps/ui/dist/fancybox.css */ "./node_modules/@fancyapps/ui/dist/fancybox.css");
+/* harmony import */ var _components_animation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/animation */ "./src/components/animation.js");
+/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/header */ "./src/components/header.js");
+/* harmony import */ var _libs_lightcountdown_v1_2_countdown__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./libs/lightcountdown_v1_2/countdown */ "./src/libs/lightcountdown_v1_2/countdown.js");
+/* harmony import */ var _components_burger__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/burger */ "./src/components/burger.js");
 
 
 
@@ -11733,15 +11684,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-
-(0,_components_header__WEBPACK_IMPORTED_MODULE_17__.default)();
-(0,_components_animation__WEBPACK_IMPORTED_MODULE_16__.default)();
-(0,_libs_lightcountdown_v1_2_countdown__WEBPACK_IMPORTED_MODULE_18__.default)();
-(0,_components_burger__WEBPACK_IMPORTED_MODULE_19__.default)();
+(0,_components_header__WEBPACK_IMPORTED_MODULE_12__.default)();
+(0,_components_animation__WEBPACK_IMPORTED_MODULE_11__.default)();
+(0,_libs_lightcountdown_v1_2_countdown__WEBPACK_IMPORTED_MODULE_13__.default)();
+(0,_components_burger__WEBPACK_IMPORTED_MODULE_14__.default)();
 }();
 /******/ })()
 ;

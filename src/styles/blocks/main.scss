@@ -18,21 +18,6 @@
         background: rgba(#000, .2);
     }
 
-    &::before {
-        display: block;
-        content: "";
-
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        z-index: 1;
-
-        height: 20vh;
-
-        background: linear-gradient(to top, #fff, transparent);
-    }
-
     &__inner {
         position: relative;
         z-index: 2;
@@ -40,10 +25,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 120vh;
+        height: 100vh;
         flex-direction: column;
         color: 	$color-primary;
-        padding-top: 10vh;
+        padding-top: 30vh;
         text-shadow: darken($color-primary, 10%) 2px 2px 3px;
         font-style: italic;
         text-align: center;
