@@ -1,0 +1,11 @@
+.burger {
+    font-size: 24px;
+    @include textShadow();
+    cursor: pointer;
+
+    text-align: right;
+
+    i {
+        animation-duration: .15s;
+    }
+}

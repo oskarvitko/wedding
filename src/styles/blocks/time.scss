@@ -1,0 +1,40 @@
+.time {
+    padding: 12em 0;
+
+    color: $color-secondary;
+
+    font-size: 16px;
+
+    @include breakpoint($bp-lg) {
+        font-size: 1.5vw;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 5.6em;
+        margin-bottom: 2em;
+        @include textShadow();
+
+        position: relative;
+
+        &:after {
+            display: block;
+            content: "";
+
+            position: absolute;
+            bottom: -1.4em;
+            left: 0;
+            right: 0;
+            z-index: 1;
+
+            height: 100px;
+
+            background: transparent url('../assets/images/time/uzor.png') center no-repeat;
+            background-size: 30%;
+
+            @include breakpoint($bp-sm) {
+                bottom: -2.2em;
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@mixin breakpoint($bp) {
+     @media (max-width: $bp) {
+          @content;
+     }
+}
+
+@mixin textShadow() {
+     // text-shadow: 2px 2px 15px rgba($color-gold, .3), -2px -2px 15px rgba($color-gold, .3), 2px -2px 15px rgba($color-gold, .3), -2px 2px 15px rgba($color-gold, .3);
+}

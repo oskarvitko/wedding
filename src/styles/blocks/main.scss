@@ -1,0 +1,81 @@
+.main {
+    background: url('../assets/images/main/main-bg.jpg') center no-repeat;
+    background-size: cover;
+
+    position: relative;
+
+    &::after {
+        display: block;
+        content: "";
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+
+        background: rgba(#000, .2);
+    }
+
+    &::before {
+        display: block;
+        content: "";
+
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 1;
+
+        height: 20vh;
+
+        background: linear-gradient(to top, #fff, transparent);
+    }
+
+    &__inner {
+        position: relative;
+        z-index: 2;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 120vh;
+        flex-direction: column;
+        color: 	$color-primary;
+        padding-top: 10vh;
+        text-shadow: darken($color-primary, 10%) 2px 2px 3px;
+        font-style: italic;
+        text-align: center;
+
+        font-size: 5rem;
+
+        @include breakpoint($bp-md) {
+            font-size: 4rem;
+        }
+        @include breakpoint($bp-sm) {
+            font-size: 11vw;
+            text-shadow: darken($color-primary, 10%) 1px 1px 3px;
+        }
+    }
+
+    &__title {
+        font-size: 1em;
+        margin: 0;
+    }
+
+    &__subtitle {
+        font-size: 1em;
+
+        position: relative;
+
+        &:before {
+            content: '~';
+        }
+        &:after {
+            content: '~';
+            display: inline-block;
+            transform: scale(-1, 1)
+        }
+    }
+}

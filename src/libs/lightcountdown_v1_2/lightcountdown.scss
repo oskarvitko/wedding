@@ -1,0 +1,49 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.lightcountdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    font-weight: 700;
+    @include textShadow();
+    @include breakpoint($bp-md) {
+        font-size: 50px;
+    }
+    @include breakpoint($bp-md) {
+        font-size: 30px;
+        font-size: min(50px, 10vw);
+    }
+}
+
+.lightcountdown__digits {
+    font-family: 'Lobster', cursive;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0 5px;
+}
+
+.lightcountdown__digit {
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    padding: 0 4px;
+    width: 0.73em;
+    color: $color-secondary;
+}
+
+.lightcountdown__delimeter {
+    color: $color-secondary;
+    margin-bottom: .6em;
+}
+
+.lightcountdown__text {
+    text-align: center;
+    margin-top: -.5em;
+    font-size: 0.5em;
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+}
