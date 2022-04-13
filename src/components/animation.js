@@ -32,6 +32,11 @@ export default () =>
       timeTitle: document.getElementById("time-title"),
       galery: document.querySelectorAll('[data-fancybox="galery"]'),
       place: document.getElementById("place"),
+      circles: document.querySelectorAll(".dress__circles-item"),
+      dressInner: (() => {
+        const dressInner = document.getElementById("dress-inner");
+        return dressInner.querySelectorAll("*");
+      })(),
     };
 
     const blocks = {
@@ -39,6 +44,7 @@ export default () =>
       time: document.getElementById("section-time"),
       galery: document.getElementById("section-galery"),
       place: document.getElementById("section-place"),
+      dress: document.getElementById("section-dress"),
     };
 
     Object.keys(animatedNodes).forEach((key) => {
@@ -91,6 +97,13 @@ export default () =>
         setTimeout(() => {
           applyAnimation(image, ["animate__flipInY"]);
         }, delay);
+      });
+    });
+    Array.prototype.forEach.call(animatedNodes.dressInner, (item, i) => {
+      useObserver(blocks.dress, () => {
+        setTimeout(() => {
+          applyAnimation(item, ["animate__fadeInUp", "animte__faster"]);
+        }, i * 200);
       });
     });
   });

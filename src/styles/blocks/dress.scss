@@ -1,0 +1,64 @@
+.dress {
+
+    padding: 5em 0;
+
+    text-align: center;
+
+    &__inner {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 3em;
+        margin-bottom: 1em;
+    }
+
+    @include breakpoint($bp-sm) {
+        font-size: 12px;
+    }
+
+    &__circles {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-item {
+            width: 100px;
+            background-color: #000;
+            border-radius: 50%;
+            height: 100px;
+            margin: 2em 0;
+
+            @include breakpoint($bp-md) {
+                height: 90px;
+                width: 90px;
+            }
+            @include breakpoint($bp-sm) {
+                height: 15vw;
+                width: 15vw;
+            }
+
+            &:first-child {
+                background-color: #c08875;
+            }
+
+            &:nth-child(2) {
+                background-color: #ebb7a1;
+            }
+
+            &:nth-child(3) {
+                background-color: #f4d8ca;
+            }
+
+            &:nth-child(4) {
+                background-color: #f3d9db;
+            }
+
+            &:nth-child(5) {
+                background-color: #dec29a;
+            }
+        }
+    }
+}

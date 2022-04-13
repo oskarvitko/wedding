@@ -16298,6 +16298,75 @@ body {
   margin: 0;
 }
 
+.map iframe {
+  width: 100%;
+  height: 50vh;
+}
+
+.dress {
+  padding: 5em 0;
+  text-align: center;
+}
+.dress__inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.dress__title {
+  font-weight: 700;
+  font-size: 3em;
+  margin-bottom: 1em;
+}
+@media (max-width: 576px) {
+  .dress {
+    font-size: 12px;
+  }
+}
+.dress__circles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.dress__circles-item {
+  width: 100px;
+  background-color: #000;
+  border-radius: 50%;
+  height: 100px;
+  margin: 2em 0;
+}
+@media (max-width: 768px) {
+  .dress__circles-item {
+    height: 90px;
+    width: 90px;
+  }
+}
+@media (max-width: 576px) {
+  .dress__circles-item {
+    height: 15vw;
+    width: 15vw;
+  }
+}
+.dress__circles-item:first-child {
+  background-color: #c08875;
+}
+.dress__circles-item:nth-child(2) {
+  background-color: #ebb7a1;
+}
+.dress__circles-item:nth-child(3) {
+  background-color: #f4d8ca;
+}
+.dress__circles-item:nth-child(4) {
+  background-color: #f3d9db;
+}
+.dress__circles-item:nth-child(5) {
+  background-color: #dec29a;
+}
+
 .hide {
   opacity: 0;
 }

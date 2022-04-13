@@ -3246,13 +3246,19 @@ var useObserver = function useObserver(node, callback) {
       time: document.getElementById("time-count"),
       timeTitle: document.getElementById("time-title"),
       galery: document.querySelectorAll('[data-fancybox="galery"]'),
-      place: document.getElementById("place")
+      place: document.getElementById("place"),
+      circles: document.querySelectorAll(".dress__circles-item"),
+      dressInner: function () {
+        var dressInner = document.getElementById("dress-inner");
+        return dressInner.querySelectorAll("*");
+      }()
     };
     var blocks = {
       main: document.getElementById("section-main"),
       time: document.getElementById("section-time"),
       galery: document.getElementById("section-galery"),
-      place: document.getElementById("section-place")
+      place: document.getElementById("section-place"),
+      dress: document.getElementById("section-dress")
     };
     Object.keys(animatedNodes).forEach(function (key) {
       if (animatedNodes[key] instanceof NodeList) {
@@ -3307,6 +3313,13 @@ var useObserver = function useObserver(node, callback) {
         setTimeout(function () {
           applyAnimation(image, ["animate__flipInY"]);
         }, delay);
+      });
+    });
+    Array.prototype.forEach.call(animatedNodes.dressInner, function (item, i) {
+      useObserver(blocks.dress, function () {
+        setTimeout(function () {
+          applyAnimation(item, ["animate__fadeInUp", "animte__faster"]);
+        }, i * 200);
       });
     });
   });
