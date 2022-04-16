@@ -3512,7 +3512,7 @@ __webpack_require__.r(__webpack_exports__);
     });
 
     if (user) {
-      title.textContent = guest.title;
+      title.textContent = user.title;
     }
   });
 });

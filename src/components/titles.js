@@ -6,6 +6,6 @@ export default () =>
     const id = searchParams.get("id");
     user = titles.find((item) => item.id === id);
     if (user) {
-      title.textContent = guest.title;
+      title.textContent = user.title;
     }
   });
