@@ -1,0 +1,28 @@
+.contacts {
+    padding: 5rem 0;
+    background-color: $color-bg;
+
+    text-align: center;
+
+    font-size: 1.3rem;
+    font-weight: 500;
+
+    a {
+        font-weight: 700;
+        text-decoration: none;
+        color: darken($color-bg, 40%);
+    }
+
+    &__text {
+        margin: .5em 0;
+
+        &.phone {
+            font-family: 'Lobster', cursive;
+            font-style: normal;
+
+            a {
+                font-weight: 400;
+            }
+        }
+    }
+}

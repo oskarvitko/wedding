@@ -10,11 +10,22 @@
         font-size: 3em;
         font-weight: 700;
 
-        margin-bottom: 2em;
+        margin-bottom: 1em;
     }
 
     &__text {
         font-weight: 500;
         font-size: 1.4em;
+        
+        b.news {
+            display: block;
+            font-size: 1.1em;
+            margin: .8em 0;
+        }
+    }
+    @include breakpoint($bp-sm) {
+        &__text.sm {
+            text-align: justify;
+        }
     }
 }

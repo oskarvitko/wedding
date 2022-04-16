@@ -1,0 +1,20 @@
+.gift {
+    text-align: center;
+    padding: 3rem 0 5rem 0;
+
+    font-size: 20px;
+
+    & .container {
+        max-width: 800px;
+    }
+
+    &__title {
+        font-size: 2em;
+        font-weight: 700;
+        margin-bottom: 1em;
+    }
+
+    @include breakpoint($bp-sm) {
+        font-size: 5vw;
+    }
+}

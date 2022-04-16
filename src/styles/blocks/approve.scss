@@ -1,0 +1,81 @@
+.approve {
+    background-color: $color-bg;
+
+    padding: 5rem 0;
+
+    text-align: center;
+
+    & .container {
+        max-width: 700px;
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1em;
+    }
+
+    &__subtitle {
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin-bottom: 1.5em;
+    }
+
+    &__form {
+        max-width: 400px;
+        margin: 0 auto;
+
+        select,
+        button {
+            border-radius: 0;
+            width: 100%;
+            padding: .6rem 0.75rem;
+        }
+    
+        select {
+            cursor: pointer;
+            border: 1px solid darken($color-bg, 20%);
+
+            &:disabled {
+                cursor: no-drop;
+            }
+        }
+
+        button {
+            &.btn-success {
+                $color-btn: #fff;
+                color: $color-secondary;
+                font-weight: 700;
+                border: 1px solid darken($color-bg, 20%);
+                background-color: $color-btn;
+                outline-color: $color-btn;
+
+                &:focus {
+                    box-shadow: 0 0 0 0.25rem rgba($color-btn, .5);
+                }
+            }
+            &.btn-primary {
+                $color-btn: darken($color-bg, 30%);
+                font-weight: 700;
+                border: 1px solid darken($color-bg, 20%);
+                background-color: $color-btn;
+                outline-color: $color-btn;
+
+                &:focus {
+                    box-shadow: 0 0 0 0.25rem rgba($color-btn, .5);
+                }
+            }
+        }
+    }
+
+    @include breakpoint($bp-sm) {
+        padding: 3.5rem 0;
+
+        &__title {
+            font-size: 6vw;
+        }
+        &__subtitle {
+            font-size: 4.5vw;
+        }
+    }
+}

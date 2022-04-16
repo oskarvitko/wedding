@@ -47,8 +47,10 @@
             <li class="header__nav-link">
               <a href="#section-dress">Дресс-код</a>
             </li>
-            <li class="header__nav-link"><a href="#asd">Участие</a></li>
-            <li class="header__nav-link"><a href="#asd">Контакты</a></li>
+            <li class="header__nav-link">
+              <a href="#section-approve">Участие</a>
+            </li>
+            <li class="header__nav-link"><a href="#section-contacts">Контакты</a></li>
           </ul>
         </nav>
       </div>
@@ -64,13 +66,15 @@
 
     <section id="section-dear" class="dear">
       <div class="container">
-        <h2 class="dear__title">Дорогие!</h2>
-        <p class="dear__text">
+        <h2 id="guest-title" class="dear__title">Дорогие!</h2>
+        <p class="dear__text sm">
           Вы получили эту ссылку, а значит мы спешим сообщить Вам важную
-          новость!<br />
-          <b>Мы женимся!</b><br />
-          Будем очень рады вас видеть рядом в этот особенный день для нас.<br />
-          Наша свадьба состоится <b>29 мая 2022 года!</b>
+          новость!</p>
+          <p class="dear__text"><b class="news">Мы женимся!</b></p>
+          <p class="dear__text sm">Этот день станет началом нашей долгой и счастливой семейной жизни.<br />
+          Разделите с нами эту радость, мы приглашаем Вас на торжество,
+          посвященное нашей свадьбе</p>
+          <p class="dear__text"><b class="news">29 мая 2022 года в 15:00!</b></p>
         </p>
       </div>
     </section>
@@ -198,6 +202,69 @@
         </div>
       </div>
     </section>
+    <section id="section-approve" class="approve">
+      <div class="container">
+        <h2 class="approve__title">
+          Очень ждём и будем рады видеть <span data-guest-you>вас</span> на
+          нашей свадьбе!
+        </h2>
+        <p class="approve__subtitle">
+          Просим подтвердить своё присутствие до <b>20 мая 2022 года!</b>
+        </p>
+        <form action="/" class="approve__form">
+          <select id="approve-select" class="form-select">
+            <option selected value="Конечно буду!">Конечно буду!</option>
+            <option value="Буду со второй половинкой">
+              Буду со второй половинкой
+            </option>
+            <option value="Будем с семьёй">Будем с семьёй</option>
+            <option value="Не будет">К сожалению не получиться</option>
+          </select>
+
+          <button
+            id="approve-btn-send"
+            type="button"
+            class="btn btn-success mt-3"
+          >
+            Ответить
+          </button>
+          <button
+            id="approve-btn-edit"
+            type="button"
+            class="btn btn-primary mt-3 d-none"
+          >
+            Изменить ответ
+          </button>
+        </form>
+      </div>
+    </section>
+    <section id="section-gift" class="gift">
+      <div class="container">
+        <h2 class="gift__title">Подарки!</h2>
+        <p class="gift__subtitle">Не ломайте голову над подарками!</p>
+        <p class="gift__subtitle">
+          Ваши конверты помогут осуществить нашу мечту о свадебном путешествии
+          или переезде в другую страну.
+        </p>
+      </div>
+    </section>
+    <section id="section-contacts" class="contacts">
+      <div class="container">
+        <p class="contacts__text">
+          Если вы хотите поздравить нас музыкально - свяжитесь с этим крутым парнем
+        </p>
+        <p class="contacts__text tg">
+          <a href="https://telegram.me/nikitakepel" target="_blank">
+            <i class="fa fa-telegram" aria-hidden="true"></i>
+            @nikitakepel
+          </a>
+        </p>
+        <p class="contacts__text phone">
+          <a href="tel:+375292638683">+375 (29) 263-86-83</a>
+        </p>
+      </div>
+    </section>
     <script src="./dist/bundle.js"></script>
+    <script src="./assets/data/titles.js"></script>
   </body>
 </html>

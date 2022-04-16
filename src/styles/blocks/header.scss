@@ -106,6 +106,8 @@
             transition: height .4s ease, opacity .4s ease;
             ul {
                 flex-direction: column;
+                justify-content: flex-start;
+                padding-top: 13vh;
                 font-size: 24px;
                 height: 100%;
                 li {
@@ -127,7 +129,7 @@
             }
 
             &.active {
-                height: calc(100vh - 58px);
+                height: calc(120vh - 58px);
                 opacity: 1;
             }
         }

@@ -16,8 +16,12 @@ import animation from "./components/animation";
 import header from "./components/header";
 import countdown from "./libs/lightcountdown_v1_2/countdown";
 import burger from "./components/burger";
+import titles from "./components/titles";
+import approve from "./components/approve";
 
 header();
 animation();
 countdown();
 burger();
+titles();
+approve();
