@@ -69,7 +69,7 @@ const titlesSections = {
 };
 
 const url = `http://127.0.0.1:5500`;
-const publicUrl = "https://oskarvitko.github.io/wedding";
+const publicUrl = "https://oskar-wedding.herokuapp.com";
 
 let user = null;
 
