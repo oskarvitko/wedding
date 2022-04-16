@@ -34,7 +34,7 @@ const includeAdminMode = () => {
   <div class="container text-center mt-5">
   ${titles
     .map((title) => {
-      const publicUrl = `${url}?id=${title.id}`;
+      const _url = `${publicUrl}?id=${title.id}`;
       return `
       <h3 style="font-style: normal;" class="my-4">
       <b>${title.name}:</b> 
