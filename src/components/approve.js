@@ -26,7 +26,7 @@ const applyEditStyles = () => {
   sendBtn.textContent = "Ответить";
   sendBtn.disabled = false;
   select.disabled = false;
-  select.value = user.sendedValue;
+  user.sendedValue && (select.value = user.sendedValue);
   editBtn.classList.add("d-none");
 };
 

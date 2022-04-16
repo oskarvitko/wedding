@@ -17,7 +17,7 @@ const useObserver = (node, callback) => {
         observer.disconnect();
       }
     },
-    0.3
+    0.5
   );
   observer.observe();
 };
@@ -37,6 +37,22 @@ export default () =>
         const dressInner = document.getElementById("dress-inner");
         return dressInner.querySelectorAll("*");
       })(),
+      approve: (() => {
+        const approveInner = document.getElementById("animation-approve");
+        return approveInner.children;
+      })(),
+      gift: (() => {
+        const gift = document.getElementById("animation-gift");
+        return gift.children;
+      })(),
+      contacts: (() => {
+        const contacts = document.getElementById("animation-contacts");
+        return contacts.children;
+      })(),
+      dear: (() => {
+        const dear = document.getElementById("animation-dear");
+        return dear.children;
+      })(),
     };
 
     const blocks = {
@@ -45,10 +61,17 @@ export default () =>
       galery: document.getElementById("section-galery"),
       place: document.getElementById("section-place"),
       dress: document.getElementById("section-dress"),
+      approve: document.getElementById("animation-approve"),
+      gift: document.getElementById("animation-gift"),
+      contacts: document.getElementById("animation-contacts"),
+      dear: document.getElementById("animation-dear"),
     };
 
     Object.keys(animatedNodes).forEach((key) => {
-      if (animatedNodes[key] instanceof NodeList) {
+      if (
+        animatedNodes[key] instanceof NodeList ||
+        animatedNodes[key] instanceof HTMLCollection
+      ) {
         return Array.prototype.forEach.call(animatedNodes[key], (node) => {
           node.classList.add("hide");
         });
@@ -103,6 +126,34 @@ export default () =>
       useObserver(blocks.dress, () => {
         setTimeout(() => {
           applyAnimation(item, ["animate__fadeInUp", "animte__faster"]);
+        }, i * 200);
+      });
+    });
+    Array.prototype.forEach.call(animatedNodes.approve, (item, i) => {
+      useObserver(blocks.approve, () => {
+        setTimeout(() => {
+          applyAnimation(item, ["animate__fadeInRight", "animte__faster"]);
+        }, i * 200);
+      });
+    });
+    Array.prototype.forEach.call(animatedNodes.gift, (item, i) => {
+      useObserver(blocks.gift, () => {
+        setTimeout(() => {
+          applyAnimation(item, ["animate__fadeIn", "animte__faster"]);
+        }, i * 200);
+      });
+    });
+    Array.prototype.forEach.call(animatedNodes.contacts, (item, i) => {
+      useObserver(blocks.contacts, () => {
+        setTimeout(() => {
+          applyAnimation(item, ["animate__fadeInUp"]);
+        }, i * 300);
+      });
+    });
+    Array.prototype.forEach.call(animatedNodes.dear, (item, i) => {
+      useObserver(blocks.dear, () => {
+        setTimeout(() => {
+          applyAnimation(item, ["animate__fadeInRight"]);
         }, i * 200);
       });
     });

@@ -3233,7 +3233,7 @@ var useObserver = function useObserver(node, callback) {
       callback();
       observer.disconnect();
     }
-  }, 0.3);
+  }, 0.5);
   observer.observe();
 };
 
@@ -3251,6 +3251,22 @@ var useObserver = function useObserver(node, callback) {
       dressInner: function () {
         var dressInner = document.getElementById("dress-inner");
         return dressInner.querySelectorAll("*");
+      }(),
+      approve: function () {
+        var approveInner = document.getElementById("animation-approve");
+        return approveInner.children;
+      }(),
+      gift: function () {
+        var gift = document.getElementById("animation-gift");
+        return gift.children;
+      }(),
+      contacts: function () {
+        var contacts = document.getElementById("animation-contacts");
+        return contacts.children;
+      }(),
+      dear: function () {
+        var dear = document.getElementById("animation-dear");
+        return dear.children;
       }()
     };
     var blocks = {
@@ -3258,10 +3274,14 @@ var useObserver = function useObserver(node, callback) {
       time: document.getElementById("section-time"),
       galery: document.getElementById("section-galery"),
       place: document.getElementById("section-place"),
-      dress: document.getElementById("section-dress")
+      dress: document.getElementById("section-dress"),
+      approve: document.getElementById("animation-approve"),
+      gift: document.getElementById("animation-gift"),
+      contacts: document.getElementById("animation-contacts"),
+      dear: document.getElementById("animation-dear")
     };
     Object.keys(animatedNodes).forEach(function (key) {
-      if (animatedNodes[key] instanceof NodeList) {
+      if (animatedNodes[key] instanceof NodeList || animatedNodes[key] instanceof HTMLCollection) {
         return Array.prototype.forEach.call(animatedNodes[key], function (node) {
           node.classList.add("hide");
         });
@@ -3322,6 +3342,34 @@ var useObserver = function useObserver(node, callback) {
         }, i * 200);
       });
     });
+    Array.prototype.forEach.call(animatedNodes.approve, function (item, i) {
+      useObserver(blocks.approve, function () {
+        setTimeout(function () {
+          applyAnimation(item, ["animate__fadeInRight", "animte__faster"]);
+        }, i * 200);
+      });
+    });
+    Array.prototype.forEach.call(animatedNodes.gift, function (item, i) {
+      useObserver(blocks.gift, function () {
+        setTimeout(function () {
+          applyAnimation(item, ["animate__fadeIn", "animte__faster"]);
+        }, i * 200);
+      });
+    });
+    Array.prototype.forEach.call(animatedNodes.contacts, function (item, i) {
+      useObserver(blocks.contacts, function () {
+        setTimeout(function () {
+          applyAnimation(item, ["animate__fadeInUp"]);
+        }, i * 300);
+      });
+    });
+    Array.prototype.forEach.call(animatedNodes.dear, function (item, i) {
+      useObserver(blocks.dear, function () {
+        setTimeout(function () {
+          applyAnimation(item, ["animate__fadeInRight"]);
+        }, i * 200);
+      });
+    });
   });
 });
 
@@ -3361,7 +3409,7 @@ var applyEditStyles = function applyEditStyles() {
   sendBtn.textContent = "Ответить";
   sendBtn.disabled = false;
   select.disabled = false;
-  select.value = user.sendedValue;
+  user.sendedValue && (select.value = user.sendedValue);
   editBtn.classList.add("d-none");
 };
 
@@ -3464,6 +3512,52 @@ __webpack_require__.r(__webpack_exports__);
         }
       }, 0.85);
       observer.observe();
+    });
+  });
+});
+
+/***/ }),
+
+/***/ "./src/components/text.js":
+/*!********************************!*\
+  !*** ./src/components/text.js ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.keys.js */ "./node_modules/core-js/modules/es.object.keys.js");
+/* harmony import */ var core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_1__);
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  return document.addEventListener("DOMContentLoaded", function () {
+    var sections = {
+      dear: {
+        link: document.getElementById("text-dear-link"),
+        text: document.getElementById("text-dear-text")
+      },
+      dress: {
+        text: document.getElementById("text-dress-text")
+      },
+      approve: {
+        title: document.getElementById("text-approve-title")
+      },
+      gift: {
+        title: document.getElementById("text-gift-title"),
+        text: document.getElementById("text-gift-text")
+      },
+      contacts: {
+        text: document.getElementById("text-contacts-text")
+      }
+    };
+    var type = user.type;
+    Object.keys(sections).forEach(function (sectionName) {
+      Object.keys(sections[sectionName]).forEach(function (componentName) {
+        sections[sectionName][componentName].textContent = titlesSections[sectionName][type][componentName];
+      });
     });
   });
 });
@@ -14282,6 +14376,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_burger__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/burger */ "./src/components/burger.js");
 /* harmony import */ var _components_titles__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/titles */ "./src/components/titles.js");
 /* harmony import */ var _components_approve__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/approve */ "./src/components/approve.js");
+/* harmony import */ var _components_text__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/text */ "./src/components/text.js");
+
 
 
 
@@ -14300,11 +14396,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (0,_components_header__WEBPACK_IMPORTED_MODULE_12__.default)();
-(0,_components_animation__WEBPACK_IMPORTED_MODULE_11__.default)();
 (0,_libs_lightcountdown_v1_2_countdown__WEBPACK_IMPORTED_MODULE_13__.default)();
 (0,_components_burger__WEBPACK_IMPORTED_MODULE_14__.default)();
 (0,_components_titles__WEBPACK_IMPORTED_MODULE_15__.default)();
 (0,_components_approve__WEBPACK_IMPORTED_MODULE_16__.default)();
+(0,_components_text__WEBPACK_IMPORTED_MODULE_17__.default)();
+(0,_components_animation__WEBPACK_IMPORTED_MODULE_11__.default)();
 }();
 /******/ })()
 ;

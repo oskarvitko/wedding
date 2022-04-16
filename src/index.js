@@ -18,10 +18,12 @@ import countdown from "./libs/lightcountdown_v1_2/countdown";
 import burger from "./components/burger";
 import titles from "./components/titles";
 import approve from "./components/approve";
+import text from "./components/text";
 
 header();
-animation();
 countdown();
 burger();
 titles();
 approve();
+text();
+animation();
