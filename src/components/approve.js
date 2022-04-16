@@ -2,6 +2,8 @@ let sendBtn;
 let editBtn;
 let select;
 
+const URL = window.location.origin;
+
 export default () =>
   document.addEventListener("DOMContentLoaded", () => {
     sendBtn = document.getElementById("approve-btn-send");
@@ -11,7 +13,20 @@ export default () =>
     sendBtn.addEventListener("click", sendHandler);
     editBtn.addEventListener("click", editHandler);
 
-    user.sended ? applySendStyles() : applyEditStyles();
+    fetch(`${URL}/user/${user.id}`, {
+      method: "get",
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        user = {
+          ...user,
+          ...data,
+        };
+
+        user.sended ? applySendStyles() : applyEditStyles();
+      });
   });
 
 const applySendStyles = () => {
@@ -31,9 +46,27 @@ const applyEditStyles = () => {
 };
 
 const sendHandler = (e) => {
-  applySendStyles();
+  fetch(`${URL}/send/${user.id}`, {
+    method: "post",
+    body: JSON.stringify({
+      sendedValue: select.value,
+      name: user.name,
+      sended: true,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then(() => window.location.reload());
 };
 
 const editHandler = (e) => {
-  applyEditStyles();
+  fetch(`${URL}/send/${user.id}`, {
+    method: "post",
+    body: JSON.stringify({
+      sended: false,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then(() => window.location.reload());
 };

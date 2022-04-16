@@ -5,8 +5,13 @@
     "animate.css": "^4.1.1",
     "bootstrap": "^5.0.1",
     "core-js": "^3.15.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "node-telegram-bot-api": "^0.56.0",
+    "nodemon": "^2.0.15"
   },
   "devDependencies": {
     "@babel/core": "^7.14.2",
@@ -26,7 +31,8 @@
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
-    "start": "npx webpack --mode development",
+    "start": "node server.js",
+    "startWebpack": "npx webpack --mode development",
     "build": "npx webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
