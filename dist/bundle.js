@@ -3655,12 +3655,12 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return document.addEventListener("DOMContentLoaded", function () {
-    var defaultOptions = [options.yes, options.no];
+    var defaultOptions = [user.type === titleTypes.plural ? "Конечно будем!" : options.yes, options.no];
     var select = document.getElementById("approve-select");
     var _options = defaultOptions;
 
     if (user.options) {
-      _options = [].concat(defaultOptions, (0,_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__.default)(user.options));
+      _options = [].concat((0,_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__.default)(user.options), defaultOptions);
     }
 
     select.innerHTML = _options.map(function (option, i) {

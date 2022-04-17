@@ -16205,6 +16205,9 @@ body {
   .dear__text.sm {
     text-align: justify;
   }
+  .dear__title {
+    font-size: 8vw;
+  }
 }
 
 .galery {
@@ -16352,7 +16355,7 @@ body {
   background-color: #000;
   border-radius: 50%;
   height: 90px;
-  margin: 2em 0 !important;
+  margin: 2em 0;
 }
 @media (max-width: 768px) {
   .dress__circles-item {

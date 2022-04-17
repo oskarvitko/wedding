@@ -30,7 +30,7 @@
             background-color: #000;
             border-radius: 50%;
             height: 90px;
-            margin: 2em 0 !important;
+            margin: 2em 0;
 
             @include breakpoint($bp-md) {
                 height: 80px;
