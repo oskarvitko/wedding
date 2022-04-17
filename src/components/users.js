@@ -249,7 +249,8 @@ window.includeAdminMode = () => {
         <tr>
           <th scope="col">Имя</th>
           <th scope="col">Ссылка</th>
-          <th scope="col">Скопировать</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
@@ -262,6 +263,9 @@ window.includeAdminMode = () => {
             <td>${_url}</td>
             <td>
               <button data-copy-btn="${_url}" type="button" class="btn btn-success ml-3 w-100">Copy</button>
+            </td>
+            <td>
+              <a href="${_url}" target="_blank" class="btn btn-primary ml-3 w-100">Go to</a>
             </td>
           </tr>
           </h5>

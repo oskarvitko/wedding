@@ -4236,10 +4236,10 @@ window.users = [{
 }];
 
 window.includeAdminMode = function () {
-  document.body.innerHTML = "\n  <div class=\"container mt-2\">\n  <button data-list-btn type=\"button\" class=\"btn btn-primary w-25\">\u0421\u043F\u0438\u0441\u043E\u043A \u043F\u0440\u0438\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u044F</button>\n  <table class=\"table table-hover\" style=\"font-style: normal;\">\n      <thead>\n        <tr>\n          <th scope=\"col\">\u0418\u043C\u044F</th>\n          <th scope=\"col\">\u0421\u0441\u044B\u043B\u043A\u0430</th>\n          <th scope=\"col\">\u0421\u043A\u043E\u043F\u0438\u0440\u043E\u0432\u0430\u0442\u044C</th>\n        </tr>\n      </thead>\n      <tbody>\n      ".concat(users.map(function (user) {
+  document.body.innerHTML = "\n  <div class=\"container mt-2\">\n  <button data-list-btn type=\"button\" class=\"btn btn-primary w-25\">\u0421\u043F\u0438\u0441\u043E\u043A \u043F\u0440\u0438\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u044F</button>\n  <table class=\"table table-hover\" style=\"font-style: normal;\">\n      <thead>\n        <tr>\n          <th scope=\"col\">\u0418\u043C\u044F</th>\n          <th scope=\"col\">\u0421\u0441\u044B\u043B\u043A\u0430</th>\n          <th scope=\"col\"></th>\n          <th scope=\"col\"></th>\n        </tr>\n      </thead>\n      <tbody>\n      ".concat(users.map(function (user) {
     var _url = "".concat(publicUrl, "?id=").concat(user.id);
 
-    return "\n          <tr>\n            <td><b>".concat(user.name, "</b></td>\n            <td>").concat(_url, "</td>\n            <td>\n              <button data-copy-btn=\"").concat(_url, "\" type=\"button\" class=\"btn btn-success ml-3 w-100\">Copy</button>\n            </td>\n          </tr>\n          </h5>\n        ");
+    return "\n          <tr>\n            <td><b>".concat(user.name, "</b></td>\n            <td>").concat(_url, "</td>\n            <td>\n              <button data-copy-btn=\"").concat(_url, "\" type=\"button\" class=\"btn btn-success ml-3 w-100\">Copy</button>\n            </td>\n            <td>\n              <a href=\"").concat(_url, "\" target=\"_blank\" class=\"btn btn-primary ml-3 w-100\">Go to</a>\n            </td>\n          </tr>\n          </h5>\n        ");
   }).join(""), "\n    </tbody>\n    </table>\n  </div>");
   var btns = document.querySelectorAll("[data-copy-btn]");
   Array.prototype.forEach.call(btns, function (btn) {
