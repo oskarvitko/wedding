@@ -22,11 +22,13 @@ import text from "./components/text";
 import select from "./components/select";
 import "./components/users";
 
-header();
-countdown();
-burger();
-titles();
-approve();
-text();
-animation();
-select();
+if (window.location.pathname !== "/admin") {
+  header();
+  countdown();
+  burger();
+  titles();
+  approve();
+  text();
+  animation();
+  select();
+}

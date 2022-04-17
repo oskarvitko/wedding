@@ -30,6 +30,10 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
+app.get("/admin", (req, res) => {
+  res.sendFile(__dirname + "/admin.html");
+});
+
 app.get("/user/:id", (req, res) => {
   const user = AppStorage.getUser(req.params.id);
   res.status(200).json(user);

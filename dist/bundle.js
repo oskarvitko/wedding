@@ -17827,14 +17827,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(0,_components_header__WEBPACK_IMPORTED_MODULE_12__.default)();
-(0,_libs_lightcountdown_v1_2_countdown__WEBPACK_IMPORTED_MODULE_13__.default)();
-(0,_components_burger__WEBPACK_IMPORTED_MODULE_14__.default)();
-(0,_components_titles__WEBPACK_IMPORTED_MODULE_15__.default)();
-(0,_components_approve__WEBPACK_IMPORTED_MODULE_16__.default)();
-(0,_components_text__WEBPACK_IMPORTED_MODULE_17__.default)();
-(0,_components_animation__WEBPACK_IMPORTED_MODULE_11__.default)();
-(0,_components_select__WEBPACK_IMPORTED_MODULE_18__.default)();
+
+if (window.location.pathname !== "/admin") {
+  (0,_components_header__WEBPACK_IMPORTED_MODULE_12__.default)();
+  (0,_libs_lightcountdown_v1_2_countdown__WEBPACK_IMPORTED_MODULE_13__.default)();
+  (0,_components_burger__WEBPACK_IMPORTED_MODULE_14__.default)();
+  (0,_components_titles__WEBPACK_IMPORTED_MODULE_15__.default)();
+  (0,_components_approve__WEBPACK_IMPORTED_MODULE_16__.default)();
+  (0,_components_text__WEBPACK_IMPORTED_MODULE_17__.default)();
+  (0,_components_animation__WEBPACK_IMPORTED_MODULE_11__.default)();
+  (0,_components_select__WEBPACK_IMPORTED_MODULE_18__.default)();
+}
 }();
 /******/ })()
 ;
