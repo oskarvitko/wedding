@@ -353,7 +353,7 @@ window.users = [
 window.includeAdminMode = () => {
   document.body.innerHTML = `
   <div class="container mt-2">
-  <button data-list-btn type="button" class="btn btn-primary w-25">Список присутствия</button>
+  <button data-list-btn type="button" class="btn btn-primary">Список присутствия</button>
   <table class="table table-hover" style="font-style: normal;">
       <thead>
         <tr>
