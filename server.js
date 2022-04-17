@@ -51,8 +51,8 @@ app.post("/send/:id", (req, res) => {
 
     console.log(message);
 
-    // bot.sendMessage("668975944", message);
-    // bot.sendMessage("1170280474", message);
+    bot.sendMessage("668975944", message);
+    bot.sendMessage("1170280474", message);
   }
   res.status(200).json(user);
 });
