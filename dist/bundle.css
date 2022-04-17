@@ -16345,24 +16345,25 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 100%;
 }
 .dress__circles-item {
-  width: 100px;
+  width: 90px;
   background-color: #000;
   border-radius: 50%;
-  height: 100px;
-  margin: 2em 0;
+  height: 90px;
+  margin: 2em 0 !important;
 }
 @media (max-width: 768px) {
   .dress__circles-item {
-    height: 90px;
-    width: 90px;
+    height: 80px;
+    width: 80px;
   }
 }
 @media (max-width: 576px) {
   .dress__circles-item {
-    height: 15vw;
-    width: 15vw;
+    height: 14vw;
+    width: 14vw;
   }
 }
 .dress__circles-item:first-child {

@@ -3754,6 +3754,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return document.addEventListener("DOMContentLoaded", function () {
     var title = document.getElementById("guest-title");
+    var circle = document.getElementById("dress-black-circle");
+    var added = document.getElementById("dress-black-circle-added");
+    var circleTitle = document.getElementById("dress-black-title");
     var searchParams = new URLSearchParams(window.location.search);
     var id = searchParams.get("id");
 
@@ -3764,6 +3767,15 @@ __webpack_require__.r(__webpack_exports__);
     if (_user) {
       user = _user;
       title.textContent = user.title;
+
+      if (user.type === titleTypes.singleBoy) {
+        circle.classList.add("d-none");
+        circleTitle.classList.add("d-none");
+        added.classList.remove("d-none");
+      } else if (user.type === titleTypes.singleGirl) {
+        circle.classList.add("d-none");
+        circleTitle.classList.add("d-none");
+      }
     }
   });
 });
