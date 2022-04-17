@@ -3244,7 +3244,7 @@ var useObserver = function useObserver(node, callback) {
       callback();
       observer.disconnect();
     }
-  }, 0.5);
+  }, 0.4);
   observer.observe();
 };
 
@@ -4218,13 +4218,13 @@ window.users = [{
 }, {
   id: "oskar-babushka-vera",
   name: "Бабушка Вера Оскара",
-  title: "Дорогая бабушка и дедушка!",
+  title: "Дорогие бабушка и дедушка!",
   type: titleTypes.plural,
   options: [options.withFamily]
 }, {
   id: "oskar-babushka-lida",
   name: "Бабушка Лида Оскара",
-  title: "Дорогая бабушка и дедушка!",
+  title: "Дорогие бабушка и дедушка!",
   type: titleTypes.plural,
   options: [options.withFamily]
 }, {

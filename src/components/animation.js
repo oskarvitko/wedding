@@ -17,7 +17,7 @@ const useObserver = (node, callback) => {
         observer.disconnect();
       }
     },
-    0.5
+    0.4
   );
   observer.observe();
 };
