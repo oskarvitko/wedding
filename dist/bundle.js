@@ -3486,7 +3486,15 @@ var sendHandler = /*#__PURE__*/function () {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
-            _context2.next = 2;
+            if (user.id) {
+              _context2.next = 2;
+              break;
+            }
+
+            return _context2.abrupt("return");
+
+          case 2:
+            _context2.next = 4;
             return _user_service__WEBPACK_IMPORTED_MODULE_10__.default.setUser({
               id: user.id,
               sendedValue: select.value,
@@ -3494,11 +3502,11 @@ var sendHandler = /*#__PURE__*/function () {
               name: user.name
             });
 
-          case 2:
-            user = _context2.sent;
+          case 4:
+            window.user = _context2.sent;
             applySendStyles();
 
-          case 4:
+          case 6:
           case "end":
             return _context2.stop();
         }
@@ -3517,17 +3525,25 @@ var editHandler = /*#__PURE__*/function () {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
-            _context3.next = 2;
+            if (user.id) {
+              _context3.next = 2;
+              break;
+            }
+
+            return _context3.abrupt("return");
+
+          case 2:
+            _context3.next = 4;
             return _user_service__WEBPACK_IMPORTED_MODULE_10__.default.setUser({
               sended: false,
               id: user.id
             });
 
-          case 2:
-            user = _context3.sent;
+          case 4:
+            window.user = _context3.sent;
             applyEditStyles();
 
-          case 4:
+          case 6:
           case "end":
             return _context3.stop();
         }
@@ -3655,7 +3671,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return document.addEventListener("DOMContentLoaded", function () {
-    var defaultOptions = [user.type === titleTypes.plural ? "Конечно будем!" : options.yes, options.no];
+    var defaultOptions = [user.type === titleTypes.plural && !user.single ? "Конечно будем!" : options.yes, options.no];
     var select = document.getElementById("approve-select");
     var _options = defaultOptions;
 
@@ -3892,12 +3908,407 @@ var UserService = /*#__PURE__*/function () {
 
       return setUser;
     }()
+  }, {
+    key: "getUsers",
+    value: function () {
+      var _getUsers = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().mark(function _callee3() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return fetch("".concat(API_URL, "/users"));
+
+              case 2:
+                response = _context3.sent;
+                _context3.next = 5;
+                return response.json();
+
+              case 5:
+                return _context3.abrupt("return", _context3.sent);
+
+              case 6:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }));
+
+      function getUsers() {
+        return _getUsers.apply(this, arguments);
+      }
+
+      return getUsers;
+    }()
+  }, {
+    key: "delete",
+    value: function () {
+      var _delete2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().mark(function _callee4(id) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.next = 2;
+                return fetch("".concat(API_URL, "/delete/").concat(id), {
+                  method: "post"
+                });
+
+              case 2:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }));
+
+      function _delete(_x3) {
+        return _delete2.apply(this, arguments);
+      }
+
+      return _delete;
+    }()
   }]);
 
   return UserService;
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (UserService);
+
+/***/ }),
+
+/***/ "./src/components/users.js":
+/*!*********************************!*\
+  !*** ./src/components/users.js ***!
+  \*********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.array.join.js */ "./node_modules/core-js/modules/es.array.join.js");
+/* harmony import */ var core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.array.map.js */ "./node_modules/core-js/modules/es.array.map.js");
+/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/es.promise.js */ "./node_modules/core-js/modules/es.promise.js");
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/es.array.sort.js */ "./node_modules/core-js/modules/es.array.sort.js");
+/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! core-js/modules/es.array.filter.js */ "./node_modules/core-js/modules/es.array.filter.js");
+/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./user-service */ "./src/components/user-service.js");
+
+
+
+var _dear, _dress, _approve, _gift, _contacts;
+
+
+
+
+
+
+
+
+
+
+
+window.titleTypes = {
+  singleBoy: "single-boy",
+  singleGirl: "single-girl",
+  plural: "plural"
+};
+window.titlesSections = {
+  dear: (_dear = {}, (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_dear, titleTypes.plural, {
+    link: "Вы получили эту ссылку, а значит мы спешим сообщить Вам важную новость!",
+    text: "Разделите с нами эту радость, мы приглашаем Вас на торжество, посвященное нашей свадьбе"
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_dear, titleTypes.singleBoy, {
+    link: "Ты получил эту ссылку, а значит мы спешим сообщить тебе важную новость!",
+    text: "Раздели с нами эту радость, мы приглашаем тебя на торжество, посвященное нашей свадьбе"
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_dear, titleTypes.singleGirl, {
+    link: "Ты получила эту ссылку, а значит мы спешим сообщить тебе важную новость!",
+    text: "Раздели с нами эту радость, мы приглашаем тебя на торжество, посвященное нашей свадьбе"
+  }), _dear),
+  dress: (_dress = {}, (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_dress, titleTypes.plural, {
+    text: "Мы будем рады, если в своих нарядах вы поддержите цветовую гамму нашей свадьбы"
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_dress, titleTypes.singleBoy, {
+    text: "Мы будем рады, если в своём наряде ты поддержишь цветовую гамму нашей свадьбы"
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_dress, titleTypes.singleGirl, {
+    text: "Мы будем рады, если в своём наряде ты поддержишь цветовую гамму нашей свадьбы"
+  }), _dress),
+  approve: (_approve = {}, (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_approve, titleTypes.plural, {
+    title: "Очень ждём и будем рады видеть вас на нашей свадьбе!"
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_approve, titleTypes.singleBoy, {
+    title: "Очень ждём и будем рады видеть тебя на нашей свадьбе!"
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_approve, titleTypes.singleGirl, {
+    title: "Очень ждём и будем рады видеть тебя на нашей свадьбе!"
+  }), _approve),
+  gift: (_gift = {}, (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_gift, titleTypes.plural, {
+    title: "Не ломайте голову над подарками!",
+    text: "Ваши конверты помогут осуществить нашу мечту о свадебном путешествии или переезде в другую страну."
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_gift, titleTypes.singleBoy, {
+    title: "Не ломай голову над подарками!",
+    text: "Твой конверт поможет осуществить нашу мечту о свадебном путешествии или переезде в другую страну."
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_gift, titleTypes.singleGirl, {
+    title: "Не ломай голову над подарками!",
+    text: "Твой конверт поможет осуществить нашу мечту о свадебном путешествии или переезде в другую страну."
+  }), _gift),
+  contacts: (_contacts = {}, (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_contacts, titleTypes.plural, {
+    text: "Если вы хотите поздравить нас музыкально - свяжитесь с этим крутым парнем"
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_contacts, titleTypes.singleBoy, {
+    text: "Если ты хочешь поздравить нас музыкально - свяжись с этим крутым парнем"
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_contacts, titleTypes.singleGirl, {
+    text: "Если ты хочешь поздравить нас музыкально - свяжись с этим крутым парнем"
+  }), _contacts)
+};
+window.options = {
+  yes: "Конечно буду!",
+  withGirl: "Буду со второй половинкой",
+  withFamily: "Будем с семьей",
+  no: "К сожалению не получиться"
+};
+var url = "http://127.0.0.1:5500";
+var publicUrl = "https://oskar-wedding.herokuapp.com";
+window.user = {};
+window.users = [{
+  id: "oskar-father",
+  name: "Папа оскара",
+  title: "Дорогой папа Андрей",
+  type: titleTypes.singleBoy
+}, {
+  id: "oskar-mother",
+  name: "Мама оскара",
+  title: "Дорогая мама Кристина",
+  type: titleTypes.singleGirl
+}, {
+  id: "elisey",
+  name: "Елисей",
+  title: "Дорогие Елисей и Катя",
+  type: titleTypes.plural,
+  options: [options.withFamily]
+}, {
+  id: "arseniy",
+  name: "Арсений",
+  title: "Арсений, брат",
+  type: titleTypes.singleBoy,
+  options: [options.withGirl]
+}, {
+  id: "virsaviya",
+  name: "Вирсавия",
+  title: "Дорогая Вирсавия",
+  type: titleTypes.singleGirl
+}, {
+  id: "ameliya",
+  name: "Амелия",
+  title: "Дорогая Амелия",
+  type: titleTypes.singleGirl
+}, {
+  id: "ahnessa-parents",
+  name: "Родители Агнессы",
+  title: "Дорогие мама Елена и отец Сергей",
+  type: titleTypes.plural,
+  options: [options.withFamily]
+}, {
+  id: "pastor-alexiy",
+  name: "Алексий",
+  title: "Пастор Алексий",
+  type: titleTypes.singleBoy
+}, {
+  id: "nastya",
+  name: "Настя",
+  title: "Настюшка - опасность",
+  type: titleTypes.singleGirl
+}, {
+  id: "mozgoviy-family",
+  name: "Семья мозговых",
+  title: "Дорогие Елена и Кирилл",
+  type: titleTypes.plural,
+  options: [options.withFamily]
+}, {
+  id: "eduarda",
+  name: "Эда",
+  title: "Эдочка, дорогая",
+  type: titleTypes.singleGirl
+}, {
+  id: "milana",
+  name: "Милана Мозговая",
+  title: "Дорогая Милана",
+  type: titleTypes.singleGirl
+}, {
+  id: "diana",
+  name: "Диана Мозговая",
+  title: "Дорогая Диана",
+  type: titleTypes.singleGirl
+}, {
+  id: "lera",
+  name: "Лера Мозговая",
+  title: "Лерон, систр",
+  type: titleTypes.singleGirl
+}, {
+  id: "danik",
+  name: "Чернов Даниил",
+  title: "Даник, брат, очкошник",
+  type: titleTypes.singleBoy
+}, {
+  id: "mattwey-chernov",
+  name: "Чернов Матвей",
+  title: "Матвей, брат, черножопик",
+  type: titleTypes.singleBoy
+}, {
+  id: "katya-chernova",
+  name: "Чернова Катя",
+  title: "Дорогие Екатерина и Виталик",
+  type: titleTypes.plural,
+  options: [options.withFamily]
+}, {
+  id: "nadya-chernova",
+  name: "Чернова Надя",
+  title: "Дорогие Надя и Андрей",
+  type: titleTypes.plural,
+  options: [options.withFamily]
+}, {
+  id: "tetya-natasha",
+  name: "Тётя Наташа Чернова",
+  title: "Тётя Наташа, дорогая",
+  type: titleTypes.plural,
+  single: true
+}, {
+  id: "sydor-family",
+  name: "Сидоры",
+  title: "Дорогие Андрей и Алла",
+  type: titleTypes.plural,
+  options: [options.withFamily]
+}, {
+  id: "sydor-marta",
+  name: "Марта Сидор",
+  title: "Дорогие Марта и Костя",
+  type: titleTypes.plural
+}, {
+  id: "oskar-babushka-vera",
+  name: "Бабушка Вера Оскара",
+  title: "Дорогая бабушка и дедушка!",
+  type: titleTypes.plural,
+  options: [options.withFamily]
+}, {
+  id: "oskar-babushka-lida",
+  name: "Бабушка Лида Оскара",
+  title: "Дорогая бабушка и дедушка!",
+  type: titleTypes.plural,
+  options: [options.withFamily]
+}, {
+  id: "ahnessa-babushka",
+  name: "Бабушка Агнессы",
+  title: "Дорогая бабушка!",
+  type: titleTypes.plural,
+  single: true
+}];
+
+window.includeAdminMode = function () {
+  document.body.innerHTML = "\n  <div class=\"container mt-2\">\n  <button data-list-btn type=\"button\" class=\"btn btn-primary w-25\">\u0421\u043F\u0438\u0441\u043E\u043A \u043F\u0440\u0438\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u044F</button>\n  <table class=\"table table-hover\" style=\"font-style: normal;\">\n      <thead>\n        <tr>\n          <th scope=\"col\">\u0418\u043C\u044F</th>\n          <th scope=\"col\">\u0421\u0441\u044B\u043B\u043A\u0430</th>\n          <th scope=\"col\">\u0421\u043A\u043E\u043F\u0438\u0440\u043E\u0432\u0430\u0442\u044C</th>\n        </tr>\n      </thead>\n      <tbody>\n      ".concat(users.map(function (user) {
+    var _url = "".concat(publicUrl, "?id=").concat(user.id);
+
+    return "\n          <tr>\n            <td><b>".concat(user.name, "</b></td>\n            <td>").concat(_url, "</td>\n            <td>\n              <button data-copy-btn=\"").concat(_url, "\" type=\"button\" class=\"btn btn-success ml-3 w-100\">Copy</button>\n            </td>\n          </tr>\n          </h5>\n        ");
+  }).join(""), "\n    </tbody>\n    </table>\n  </div>");
+  var btns = document.querySelectorAll("[data-copy-btn]");
+  Array.prototype.forEach.call(btns, function (btn) {
+    return btn.addEventListener("click", function (e) {
+      copyUrl(e.target.dataset.copyBtn);
+    });
+  });
+  var listBtn = document.querySelector("[data-list-btn]");
+  listBtn.addEventListener("click", /*#__PURE__*/(0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().mark(function _callee2() {
+    var response, users, backBtn, allBtn, deleteBtns;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return fetch("".concat(window.location.origin, "/users"));
+
+          case 2:
+            response = _context2.sent;
+            _context2.next = 5;
+            return response.json();
+
+          case 5:
+            users = _context2.sent;
+            document.body.innerHTML = "\n    <div class=\"container mt-2\">\n    <button data-btn-back type=\"button\" class=\"btn btn-primary w-25\">\u041D\u0430\u0437\u0430\u0434</button>\n    <button data-btn-all type=\"button\" class=\"btn btn-success w-25 ms-3\">All</button>\n    <table class=\"table table-hover\" style=\"font-style: normal;\">\n      <thead>\n        <tr>\n          <th scope=\"col\">Id</th>\n          <th scope=\"col\">\u0418\u043C\u044F</th>\n          <th scope=\"col\">\u041F\u0440\u0438\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435</th>\n          <th scope=\"col\">\u0423\u0434\u0430\u043B\u0438\u0442\u044C</th>\n        </tr>\n      </thead>\n      <tbody>\n        ".concat(users.filter(function (user) {
+              return user.name;
+            }).sort(function (user1, user2) {
+              var value1 = user1.sendedValue ? user1.sendedValue.toLowerCase() : "";
+              var value2 = user2.sendedValue ? user2.sendedValue.toLowerCase() : "";
+              if (value1 > value2) return -1;
+              if (value1 < value2) return 1;
+              return 0;
+            }).map(function (user) {
+              return "\n        <tr>\n          <td>".concat(user.id, "</td>\n          <td>").concat(user.name, "</td>\n          <td>").concat(user.sendedValue, "</td>\n          <td>\n              <button data-delete-btn=\"").concat(user.id, "\" type=\"button\" class=\"btn btn-danger ml-3 w-100\">Delete</button>\n          </td>\n        </tr>\n        ");
+            }).join(""), "\n    </tbody>\n    </table>\n    </div>\n    ");
+            backBtn = document.querySelector("[data-btn-back]");
+            allBtn = document.querySelector("[data-btn-all]");
+            deleteBtns = document.querySelectorAll("[data-delete-btn]");
+            backBtn.addEventListener("click", function () {
+              return includeAdminMode();
+            });
+            allBtn.addEventListener("click", function () {
+              var tableBody = document.querySelector("tbody");
+              tableBody.innerHTML = "\n      ".concat(users.sort(function (user1, user2) {
+                var value1 = user1.sendedValue ? user1.sendedValue.toLowerCase() : "";
+                var value2 = user2.sendedValue ? user2.sendedValue.toLowerCase() : "";
+                if (value1 > value2) return -1;
+                if (value1 < value2) return 1;
+                return 0;
+              }).map(function (user) {
+                return "\n      <tr>\n        <td>".concat(user.id, "</td>\n        <td>").concat(user.name, "</td>\n        <td>").concat(user.sendedValue, "</td>\n        <td>\n            <button data-delete-btn=\"").concat(user.id, "\" type=\"button\" class=\"btn btn-danger ml-3 w-100\">Delete</button>\n        </td>\n      </tr>\n      ");
+              }).join(""), "\n      ");
+            });
+            Array.prototype.forEach.call(deleteBtns, function (btn) {
+              return btn.addEventListener("click", /*#__PURE__*/function () {
+                var _ref2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().mark(function _callee(e) {
+                  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().wrap(function _callee$(_context) {
+                    while (1) {
+                      switch (_context.prev = _context.next) {
+                        case 0:
+                          _context.next = 2;
+                          return _user_service__WEBPACK_IMPORTED_MODULE_11__.default.delete(btn.dataset.deleteBtn);
+
+                        case 2:
+                          listBtn.click();
+
+                        case 3:
+                        case "end":
+                          return _context.stop();
+                      }
+                    }
+                  }, _callee);
+                }));
+
+                return function (_x) {
+                  return _ref2.apply(this, arguments);
+                };
+              }());
+            });
+
+          case 13:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  })));
+};
+
+function copyUrl(text) {
+  navigator.clipboard.writeText(text);
+}
 
 /***/ }),
 
@@ -9574,6 +9985,61 @@ module.exports = function (METHOD_NAME, argument) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/array-sort.js":
+/*!******************************************************!*\
+  !*** ./node_modules/core-js/internals/array-sort.js ***!
+  \******************************************************/
+/***/ (function(module) {
+
+// TODO: use something more complex like timsort?
+var floor = Math.floor;
+
+var mergeSort = function (array, comparefn) {
+  var length = array.length;
+  var middle = floor(length / 2);
+  return length < 8 ? insertionSort(array, comparefn) : merge(
+    mergeSort(array.slice(0, middle), comparefn),
+    mergeSort(array.slice(middle), comparefn),
+    comparefn
+  );
+};
+
+var insertionSort = function (array, comparefn) {
+  var length = array.length;
+  var i = 1;
+  var element, j;
+
+  while (i < length) {
+    j = i;
+    element = array[i];
+    while (j && comparefn(array[j - 1], element) > 0) {
+      array[j] = array[--j];
+    }
+    if (j !== i++) array[j] = element;
+  } return array;
+};
+
+var merge = function (left, right, comparefn) {
+  var llength = left.length;
+  var rlength = right.length;
+  var lindex = 0;
+  var rindex = 0;
+  var result = [];
+
+  while (lindex < llength || rindex < rlength) {
+    if (lindex < llength && rindex < rlength) {
+      result.push(comparefn(left[lindex], right[rindex]) <= 0 ? left[lindex++] : right[rindex++]);
+    } else {
+      result.push(lindex < llength ? left[lindex++] : right[rindex++]);
+    }
+  } return result;
+};
+
+module.exports = mergeSort;
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/array-species-constructor.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/core-js/internals/array-species-constructor.js ***!
@@ -10074,6 +10540,21 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/engine-ff-version.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/core-js/internals/engine-ff-version.js ***!
+  \*************************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var userAgent = __webpack_require__(/*! ../internals/engine-user-agent */ "./node_modules/core-js/internals/engine-user-agent.js");
+
+var firefox = userAgent.match(/firefox\/(\d+)/i);
+
+module.exports = !!firefox && +firefox[1];
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/engine-is-browser.js":
 /*!*************************************************************!*\
   !*** ./node_modules/core-js/internals/engine-is-browser.js ***!
@@ -10081,6 +10562,19 @@ module.exports = {
 /***/ (function(module) {
 
 module.exports = typeof window == 'object';
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/engine-is-ie-or-edge.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/core-js/internals/engine-is-ie-or-edge.js ***!
+  \****************************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var UA = __webpack_require__(/*! ../internals/engine-user-agent */ "./node_modules/core-js/internals/engine-user-agent.js");
+
+module.exports = /MSIE|Trident/.test(UA);
 
 
 /***/ }),
@@ -10179,6 +10673,21 @@ if (v8) {
 }
 
 module.exports = version && +version;
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/engine-webkit-version.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/core-js/internals/engine-webkit-version.js ***!
+  \*****************************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var userAgent = __webpack_require__(/*! ../internals/engine-user-agent */ "./node_modules/core-js/internals/engine-user-agent.js");
+
+var webkit = userAgent.match(/AppleWebKit\/(\d+)\./);
+
+module.exports = !!webkit && +webkit[1];
 
 
 /***/ }),
@@ -13088,6 +13597,119 @@ var HAS_SPECIES_SUPPORT = arrayMethodHasSpeciesSupport('map');
 $({ target: 'Array', proto: true, forced: !HAS_SPECIES_SUPPORT }, {
   map: function map(callbackfn /* , thisArg */) {
     return $map(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/es.array.sort.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js/modules/es.array.sort.js ***!
+  \*******************************************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var aFunction = __webpack_require__(/*! ../internals/a-function */ "./node_modules/core-js/internals/a-function.js");
+var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
+var toLength = __webpack_require__(/*! ../internals/to-length */ "./node_modules/core-js/internals/to-length.js");
+var toString = __webpack_require__(/*! ../internals/to-string */ "./node_modules/core-js/internals/to-string.js");
+var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
+var internalSort = __webpack_require__(/*! ../internals/array-sort */ "./node_modules/core-js/internals/array-sort.js");
+var arrayMethodIsStrict = __webpack_require__(/*! ../internals/array-method-is-strict */ "./node_modules/core-js/internals/array-method-is-strict.js");
+var FF = __webpack_require__(/*! ../internals/engine-ff-version */ "./node_modules/core-js/internals/engine-ff-version.js");
+var IE_OR_EDGE = __webpack_require__(/*! ../internals/engine-is-ie-or-edge */ "./node_modules/core-js/internals/engine-is-ie-or-edge.js");
+var V8 = __webpack_require__(/*! ../internals/engine-v8-version */ "./node_modules/core-js/internals/engine-v8-version.js");
+var WEBKIT = __webpack_require__(/*! ../internals/engine-webkit-version */ "./node_modules/core-js/internals/engine-webkit-version.js");
+
+var test = [];
+var nativeSort = test.sort;
+
+// IE8-
+var FAILS_ON_UNDEFINED = fails(function () {
+  test.sort(undefined);
+});
+// V8 bug
+var FAILS_ON_NULL = fails(function () {
+  test.sort(null);
+});
+// Old WebKit
+var STRICT_METHOD = arrayMethodIsStrict('sort');
+
+var STABLE_SORT = !fails(function () {
+  // feature detection can be too slow, so check engines versions
+  if (V8) return V8 < 70;
+  if (FF && FF > 3) return;
+  if (IE_OR_EDGE) return true;
+  if (WEBKIT) return WEBKIT < 603;
+
+  var result = '';
+  var code, chr, value, index;
+
+  // generate an array with more 512 elements (Chakra and old V8 fails only in this case)
+  for (code = 65; code < 76; code++) {
+    chr = String.fromCharCode(code);
+
+    switch (code) {
+      case 66: case 69: case 70: case 72: value = 3; break;
+      case 68: case 71: value = 4; break;
+      default: value = 2;
+    }
+
+    for (index = 0; index < 47; index++) {
+      test.push({ k: chr + index, v: value });
+    }
+  }
+
+  test.sort(function (a, b) { return b.v - a.v; });
+
+  for (index = 0; index < test.length; index++) {
+    chr = test[index].k.charAt(0);
+    if (result.charAt(result.length - 1) !== chr) result += chr;
+  }
+
+  return result !== 'DGBEFHACIJK';
+});
+
+var FORCED = FAILS_ON_UNDEFINED || !FAILS_ON_NULL || !STRICT_METHOD || !STABLE_SORT;
+
+var getSortCompare = function (comparefn) {
+  return function (x, y) {
+    if (y === undefined) return -1;
+    if (x === undefined) return 1;
+    if (comparefn !== undefined) return +comparefn(x, y) || 0;
+    return toString(x) > toString(y) ? 1 : -1;
+  };
+};
+
+// `Array.prototype.sort` method
+// https://tc39.es/ecma262/#sec-array.prototype.sort
+$({ target: 'Array', proto: true, forced: FORCED }, {
+  sort: function sort(comparefn) {
+    if (comparefn !== undefined) aFunction(comparefn);
+
+    var array = toObject(this);
+
+    if (STABLE_SORT) return comparefn === undefined ? nativeSort.call(array) : nativeSort.call(array, comparefn);
+
+    var items = [];
+    var arrayLength = toLength(array.length);
+    var itemsLength, index;
+
+    for (index = 0; index < arrayLength; index++) {
+      if (index in array) items.push(array[index]);
+    }
+
+    items = internalSort(items, getSortCompare(comparefn));
+    itemsLength = items.length;
+    index = 0;
+
+    while (index < itemsLength) array[index] = items[index++];
+    while (index < arrayLength) delete array[index++];
+
+    return array;
   }
 });
 
@@ -16978,6 +17600,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_approve__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/approve */ "./src/components/approve.js");
 /* harmony import */ var _components_text__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/text */ "./src/components/text.js");
 /* harmony import */ var _components_select__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/select */ "./src/components/select.js");
+/* harmony import */ var _components_users__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/users */ "./src/components/users.js");
+
 
 
 

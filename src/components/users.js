@@ -1,10 +1,12 @@
-const titleTypes = {
+import UserService from "./user-service";
+
+window.titleTypes = {
   singleBoy: "single-boy",
   singleGirl: "single-girl",
   plural: "plural",
 };
 
-const titlesSections = {
+window.titlesSections = {
   dear: {
     [titleTypes.plural]: {
       link: "Вы получили эту ссылку, а значит мы спешим сообщить Вам важную новость!",
@@ -68,7 +70,7 @@ const titlesSections = {
   },
 };
 
-const options = {
+window.options = {
   yes: "Конечно буду!",
   withGirl: "Буду со второй половинкой",
   withFamily: "Будем с семьей",
@@ -78,9 +80,9 @@ const options = {
 const url = `http://127.0.0.1:5500`;
 const publicUrl = "https://oskar-wedding.herokuapp.com";
 
-let user = {};
+window.user = {};
 
-const users = [
+window.users = [
   {
     id: "oskar-father",
     name: "Папа оскара",
@@ -189,7 +191,7 @@ const users = [
     options: [options.withFamily],
   },
   {
-    id: "katya-chernova",
+    id: "nadya-chernova",
     name: "Чернова Надя",
     title: "Дорогие Надя и Андрей",
     type: titleTypes.plural,
@@ -200,24 +202,74 @@ const users = [
     name: "Тётя Наташа Чернова",
     title: "Тётя Наташа, дорогая",
     type: titleTypes.plural,
+    single: true,
+  },
+  {
+    id: "sydor-family",
+    name: "Сидоры",
+    title: "Дорогие Андрей и Алла",
+    type: titleTypes.plural,
+    options: [options.withFamily],
+  },
+  {
+    id: "sydor-marta",
+    name: "Марта Сидор",
+    title: "Дорогие Марта и Костя",
+    type: titleTypes.plural,
+  },
+  {
+    id: "oskar-babushka-vera",
+    name: "Бабушка Вера Оскара",
+    title: "Дорогая бабушка и дедушка!",
+    type: titleTypes.plural,
+    options: [options.withFamily],
+  },
+  {
+    id: "oskar-babushka-lida",
+    name: "Бабушка Лида Оскара",
+    title: "Дорогая бабушка и дедушка!",
+    type: titleTypes.plural,
+    options: [options.withFamily],
+  },
+  {
+    id: "ahnessa-babushka",
+    name: "Бабушка Агнессы",
+    title: "Дорогая бабушка!",
+    type: titleTypes.plural,
+    single: true,
   },
 ];
 
-const includeAdminMode = () => {
+window.includeAdminMode = () => {
   document.body.innerHTML = `
-  <div class="container text-center mt-5">
-  ${users
-    .map((title) => {
-      const _url = `${publicUrl}?id=${title.id}`;
-      return `
-      <h3 style="font-style: normal;" class="my-4">
-      <b>${title.name}:</b> 
-      ${_url} 
-      <button data-copy-btn="${_url}" type="button" class="btn btn-success ml-3">Copy</button>
-      </h3>
-    `;
-    })
-    .join(``)}
+  <div class="container mt-2">
+  <button data-list-btn type="button" class="btn btn-primary w-25">Список присутствия</button>
+  <table class="table table-hover" style="font-style: normal;">
+      <thead>
+        <tr>
+          <th scope="col">Имя</th>
+          <th scope="col">Ссылка</th>
+          <th scope="col">Скопировать</th>
+        </tr>
+      </thead>
+      <tbody>
+      ${users
+        .map((user) => {
+          const _url = `${publicUrl}?id=${user.id}`;
+          return `
+          <tr>
+            <td><b>${user.name}</b></td>
+            <td>${_url}</td>
+            <td>
+              <button data-copy-btn="${_url}" type="button" class="btn btn-success ml-3 w-100">Copy</button>
+            </td>
+          </tr>
+          </h5>
+        `;
+        })
+        .join(``)}
+    </tbody>
+    </table>
   </div>`;
 
   const btns = document.querySelectorAll("[data-copy-btn]");
@@ -226,6 +278,96 @@ const includeAdminMode = () => {
       copyUrl(e.target.dataset.copyBtn);
     })
   );
+  const listBtn = document.querySelector("[data-list-btn]");
+  listBtn.addEventListener("click", async () => {
+    const response = await fetch(`${window.location.origin}/users`);
+    const users = await response.json();
+
+    document.body.innerHTML = `
+    <div class="container mt-2">
+    <button data-btn-back type="button" class="btn btn-primary w-25">Назад</button>
+    <button data-btn-all type="button" class="btn btn-success w-25 ms-3">All</button>
+    <table class="table table-hover" style="font-style: normal;">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Имя</th>
+          <th scope="col">Присутствие</th>
+          <th scope="col">Удалить</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${users
+          .filter((user) => user.name)
+          .sort((user1, user2) => {
+            const value1 = user1.sendedValue
+              ? user1.sendedValue.toLowerCase()
+              : "";
+            const value2 = user2.sendedValue
+              ? user2.sendedValue.toLowerCase()
+              : "";
+            if (value1 > value2) return -1;
+            if (value1 < value2) return 1;
+            return 0;
+          })
+          .map(
+            (user) => `
+        <tr>
+          <td>${user.id}</td>
+          <td>${user.name}</td>
+          <td>${user.sendedValue}</td>
+          <td>
+              <button data-delete-btn="${user.id}" type="button" class="btn btn-danger ml-3 w-100">Delete</button>
+          </td>
+        </tr>
+        `
+          )
+          .join("")}
+    </tbody>
+    </table>
+    </div>
+    `;
+    const backBtn = document.querySelector("[data-btn-back]");
+    const allBtn = document.querySelector("[data-btn-all]");
+    const deleteBtns = document.querySelectorAll("[data-delete-btn]");
+    backBtn.addEventListener("click", () => includeAdminMode());
+    allBtn.addEventListener("click", () => {
+      const tableBody = document.querySelector("tbody");
+      tableBody.innerHTML = `
+      ${users
+        .sort((user1, user2) => {
+          const value1 = user1.sendedValue
+            ? user1.sendedValue.toLowerCase()
+            : "";
+          const value2 = user2.sendedValue
+            ? user2.sendedValue.toLowerCase()
+            : "";
+          if (value1 > value2) return -1;
+          if (value1 < value2) return 1;
+          return 0;
+        })
+        .map(
+          (user) => `
+      <tr>
+        <td>${user.id}</td>
+        <td>${user.name}</td>
+        <td>${user.sendedValue}</td>
+        <td>
+            <button data-delete-btn="${user.id}" type="button" class="btn btn-danger ml-3 w-100">Delete</button>
+        </td>
+      </tr>
+      `
+        )
+        .join("")}
+      `;
+    });
+    Array.prototype.forEach.call(deleteBtns, (btn) =>
+      btn.addEventListener("click", async (e) => {
+        await UserService.delete(btn.dataset.deleteBtn);
+        listBtn.click();
+      })
+    );
+  });
 };
 
 function copyUrl(text) {

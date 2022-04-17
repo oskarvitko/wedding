@@ -1,7 +1,9 @@
 export default () =>
   document.addEventListener("DOMContentLoaded", () => {
     const defaultOptions = [
-      user.type === titleTypes.plural ? "Конечно будем!" : options.yes,
+      user.type === titleTypes.plural && !user.single
+        ? "Конечно будем!"
+        : options.yes,
       options.no,
     ];
     const select = document.getElementById("approve-select");

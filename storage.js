@@ -48,6 +48,15 @@ class AppStorage {
     }
     return user;
   }
+
+  static getUsers() {
+    return this.users;
+  }
+
+  static delete(id) {
+    this.users = this.users.filter((user) => user.id !== id);
+    this.updateData();
+  }
 }
 
 module.exports = AppStorage;

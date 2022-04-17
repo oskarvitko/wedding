@@ -20,6 +20,7 @@ import titles from "./components/titles";
 import approve from "./components/approve";
 import text from "./components/text";
 import select from "./components/select";
+import "./components/users";
 
 header();
 countdown();

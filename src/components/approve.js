@@ -41,7 +41,8 @@ const applyEditStyles = () => {
 };
 
 const sendHandler = async (e) => {
-  user = await UserService.setUser({
+  if (!user.id) return;
+  window.user = await UserService.setUser({
     id: user.id,
     sendedValue: select.value,
     sended: true,
@@ -51,7 +52,8 @@ const sendHandler = async (e) => {
 };
 
 const editHandler = async (e) => {
-  user = await UserService.setUser({
+  if (!user.id) return;
+  window.user = await UserService.setUser({
     sended: false,
     id: user.id,
   });

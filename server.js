@@ -51,10 +51,21 @@ app.post("/send/:id", (req, res) => {
 
     console.log(message);
 
-    bot.sendMessage("668975944", message);
-    bot.sendMessage("1170280474", message);
+    if (user.name) {
+      bot.sendMessage("668975944", message);
+      bot.sendMessage("1170280474", message);
+    }
   }
   res.status(200).json(user);
+});
+
+app.get("/users", (req, res) => {
+  res.status(200).json(AppStorage.getUsers());
+});
+
+app.post("/delete/:id", (req, res) => {
+  AppStorage.delete(req.params.id);
+  res.status(200).json("good");
 });
 
 app.listen(PORT, () => {

@@ -18,6 +18,15 @@ class UserService {
     const _user = await response.json();
     return _user;
   }
+
+  static async getUsers() {
+    const response = await fetch(`${API_URL}/users`);
+    return await response.json();
+  }
+
+  static async delete(id) {
+    await fetch(`${API_URL}/delete/${id}`, { method: "post" });
+  }
 }
 
 export default UserService;
