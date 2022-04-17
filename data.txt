@@ -1,1 +1,1 @@
-[{"id":"arseniy","sended":false,"sendedValue":false}]
+[]

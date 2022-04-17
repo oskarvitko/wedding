@@ -281,12 +281,22 @@ window.includeAdminMode = () => {
   const listBtn = document.querySelector("[data-list-btn]");
   listBtn.addEventListener("click", async () => {
     const response = await fetch(`${window.location.origin}/users`);
-    const users = await response.json();
+    const _users = await response.json();
+    const users = window.users.map((user) => {
+      const findable = _users.find((_user) => _user.id === user.id);
+      if (findable) {
+        return {
+          ...user,
+          ...findable,
+        };
+      }
+
+      return user;
+    });
 
     document.body.innerHTML = `
     <div class="container mt-2">
     <button data-btn-back type="button" class="btn btn-primary w-25">Назад</button>
-    <button data-btn-all type="button" class="btn btn-success w-25 ms-3">All</button>
     <table class="table table-hover" style="font-style: normal;">
       <thead>
         <tr>
@@ -315,9 +325,11 @@ window.includeAdminMode = () => {
         <tr>
           <td>${user.id}</td>
           <td>${user.name}</td>
-          <td>${user.sendedValue}</td>
+          <td>${user.sendedValue ? user.sendedValue : "Не отвечено"}</td>
           <td>
-              <button data-delete-btn="${user.id}" type="button" class="btn btn-danger ml-3 w-100">Delete</button>
+              <button data-delete-btn="${
+                user.id
+              }" type="button" class="btn btn-danger ml-3 w-100">Delete</button>
           </td>
         </tr>
         `
@@ -328,39 +340,9 @@ window.includeAdminMode = () => {
     </div>
     `;
     const backBtn = document.querySelector("[data-btn-back]");
-    const allBtn = document.querySelector("[data-btn-all]");
     const deleteBtns = document.querySelectorAll("[data-delete-btn]");
     backBtn.addEventListener("click", () => includeAdminMode());
-    allBtn.addEventListener("click", () => {
-      const tableBody = document.querySelector("tbody");
-      tableBody.innerHTML = `
-      ${users
-        .sort((user1, user2) => {
-          const value1 = user1.sendedValue
-            ? user1.sendedValue.toLowerCase()
-            : "";
-          const value2 = user2.sendedValue
-            ? user2.sendedValue.toLowerCase()
-            : "";
-          if (value1 > value2) return -1;
-          if (value1 < value2) return 1;
-          return 0;
-        })
-        .map(
-          (user) => `
-      <tr>
-        <td>${user.id}</td>
-        <td>${user.name}</td>
-        <td>${user.sendedValue}</td>
-        <td>
-            <button data-delete-btn="${user.id}" type="button" class="btn btn-danger ml-3 w-100">Delete</button>
-        </td>
-      </tr>
-      `
-        )
-        .join("")}
-      `;
-    });
+
     Array.prototype.forEach.call(deleteBtns, (btn) =>
       btn.addEventListener("click", async (e) => {
         await UserService.delete(btn.dataset.deleteBtn);

@@ -3986,31 +3986,54 @@ var UserService = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.array.join.js */ "./node_modules/core-js/modules/es.array.join.js");
-/* harmony import */ var core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.array.map.js */ "./node_modules/core-js/modules/es.array.map.js");
-/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
-/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/es.promise.js */ "./node_modules/core-js/modules/es.promise.js");
-/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/es.array.sort.js */ "./node_modules/core-js/modules/es.array.sort.js");
-/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! core-js/modules/es.array.filter.js */ "./node_modules/core-js/modules/es.array.filter.js");
-/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./user-service */ "./src/components/user-service.js");
+/* harmony import */ var core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.keys.js */ "./node_modules/core-js/modules/es.object.keys.js");
+/* harmony import */ var core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.symbol.js */ "./node_modules/core-js/modules/es.symbol.js");
+/* harmony import */ var core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_object_get_own_property_descriptor_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.object.get-own-property-descriptor.js */ "./node_modules/core-js/modules/es.object.get-own-property-descriptor.js");
+/* harmony import */ var core_js_modules_es_object_get_own_property_descriptor_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_get_own_property_descriptor_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_object_get_own_property_descriptors_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.object.get-own-property-descriptors.js */ "./node_modules/core-js/modules/es.object.get-own-property-descriptors.js");
+/* harmony import */ var core_js_modules_es_object_get_own_property_descriptors_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_get_own_property_descriptors_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/es.array.join.js */ "./node_modules/core-js/modules/es.array.join.js");
+/* harmony import */ var core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/es.array.map.js */ "./node_modules/core-js/modules/es.array.map.js");
+/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! core-js/modules/es.promise.js */ "./node_modules/core-js/modules/es.promise.js");
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! core-js/modules/es.array.find.js */ "./node_modules/core-js/modules/es.array.find.js");
+/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! core-js/modules/es.array.sort.js */ "./node_modules/core-js/modules/es.array.sort.js");
+/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! core-js/modules/es.array.filter.js */ "./node_modules/core-js/modules/es.array.filter.js");
+/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./user-service */ "./src/components/user-service.js");
+
+
+
+
+
 
 
 
 var _dear, _dress, _approve, _gift, _contacts;
+
+
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__.default)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 
 
@@ -4028,45 +4051,45 @@ window.titleTypes = {
   plural: "plural"
 };
 window.titlesSections = {
-  dear: (_dear = {}, (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_dear, titleTypes.plural, {
+  dear: (_dear = {}, (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__.default)(_dear, titleTypes.plural, {
     link: "Вы получили эту ссылку, а значит мы спешим сообщить Вам важную новость!",
     text: "Разделите с нами эту радость, мы приглашаем Вас на торжество, посвященное нашей свадьбе"
-  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_dear, titleTypes.singleBoy, {
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__.default)(_dear, titleTypes.singleBoy, {
     link: "Ты получил эту ссылку, а значит мы спешим сообщить тебе важную новость!",
     text: "Раздели с нами эту радость, мы приглашаем тебя на торжество, посвященное нашей свадьбе"
-  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_dear, titleTypes.singleGirl, {
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__.default)(_dear, titleTypes.singleGirl, {
     link: "Ты получила эту ссылку, а значит мы спешим сообщить тебе важную новость!",
     text: "Раздели с нами эту радость, мы приглашаем тебя на торжество, посвященное нашей свадьбе"
   }), _dear),
-  dress: (_dress = {}, (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_dress, titleTypes.plural, {
+  dress: (_dress = {}, (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__.default)(_dress, titleTypes.plural, {
     text: "Мы будем рады, если в своих нарядах вы поддержите цветовую гамму нашей свадьбы"
-  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_dress, titleTypes.singleBoy, {
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__.default)(_dress, titleTypes.singleBoy, {
     text: "Мы будем рады, если в своём наряде ты поддержишь цветовую гамму нашей свадьбы"
-  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_dress, titleTypes.singleGirl, {
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__.default)(_dress, titleTypes.singleGirl, {
     text: "Мы будем рады, если в своём наряде ты поддержишь цветовую гамму нашей свадьбы"
   }), _dress),
-  approve: (_approve = {}, (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_approve, titleTypes.plural, {
+  approve: (_approve = {}, (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__.default)(_approve, titleTypes.plural, {
     title: "Очень ждём и будем рады видеть вас на нашей свадьбе!"
-  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_approve, titleTypes.singleBoy, {
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__.default)(_approve, titleTypes.singleBoy, {
     title: "Очень ждём и будем рады видеть тебя на нашей свадьбе!"
-  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_approve, titleTypes.singleGirl, {
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__.default)(_approve, titleTypes.singleGirl, {
     title: "Очень ждём и будем рады видеть тебя на нашей свадьбе!"
   }), _approve),
-  gift: (_gift = {}, (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_gift, titleTypes.plural, {
+  gift: (_gift = {}, (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__.default)(_gift, titleTypes.plural, {
     title: "Не ломайте голову над подарками!",
     text: "Ваши конверты помогут осуществить нашу мечту о свадебном путешествии или переезде в другую страну."
-  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_gift, titleTypes.singleBoy, {
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__.default)(_gift, titleTypes.singleBoy, {
     title: "Не ломай голову над подарками!",
     text: "Твой конверт поможет осуществить нашу мечту о свадебном путешествии или переезде в другую страну."
-  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_gift, titleTypes.singleGirl, {
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__.default)(_gift, titleTypes.singleGirl, {
     title: "Не ломай голову над подарками!",
     text: "Твой конверт поможет осуществить нашу мечту о свадебном путешествии или переезде в другую страну."
   }), _gift),
-  contacts: (_contacts = {}, (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_contacts, titleTypes.plural, {
+  contacts: (_contacts = {}, (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__.default)(_contacts, titleTypes.plural, {
     text: "Если вы хотите поздравить нас музыкально - свяжитесь с этим крутым парнем"
-  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_contacts, titleTypes.singleBoy, {
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__.default)(_contacts, titleTypes.singleBoy, {
     text: "Если ты хочешь поздравить нас музыкально - свяжись с этим крутым парнем"
-  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(_contacts, titleTypes.singleGirl, {
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__.default)(_contacts, titleTypes.singleGirl, {
     text: "Если ты хочешь поздравить нас музыкально - свяжись с этим крутым парнем"
   }), _contacts)
 };
@@ -4225,9 +4248,10 @@ window.includeAdminMode = function () {
     });
   });
   var listBtn = document.querySelector("[data-list-btn]");
-  listBtn.addEventListener("click", /*#__PURE__*/(0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().mark(function _callee2() {
-    var response, users, backBtn, allBtn, deleteBtns;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().wrap(function _callee2$(_context2) {
+  listBtn.addEventListener("click", /*#__PURE__*/(0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_5__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default().mark(function _callee2() {
+    var response, _users, users, backBtn, deleteBtns;
+
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default().wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
@@ -4240,8 +4264,19 @@ window.includeAdminMode = function () {
             return response.json();
 
           case 5:
-            users = _context2.sent;
-            document.body.innerHTML = "\n    <div class=\"container mt-2\">\n    <button data-btn-back type=\"button\" class=\"btn btn-primary w-25\">\u041D\u0430\u0437\u0430\u0434</button>\n    <button data-btn-all type=\"button\" class=\"btn btn-success w-25 ms-3\">All</button>\n    <table class=\"table table-hover\" style=\"font-style: normal;\">\n      <thead>\n        <tr>\n          <th scope=\"col\">Id</th>\n          <th scope=\"col\">\u0418\u043C\u044F</th>\n          <th scope=\"col\">\u041F\u0440\u0438\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435</th>\n          <th scope=\"col\">\u0423\u0434\u0430\u043B\u0438\u0442\u044C</th>\n        </tr>\n      </thead>\n      <tbody>\n        ".concat(users.filter(function (user) {
+            _users = _context2.sent;
+            users = window.users.map(function (user) {
+              var findable = _users.find(function (_user) {
+                return _user.id === user.id;
+              });
+
+              if (findable) {
+                return _objectSpread(_objectSpread({}, user), findable);
+              }
+
+              return user;
+            });
+            document.body.innerHTML = "\n    <div class=\"container mt-2\">\n    <button data-btn-back type=\"button\" class=\"btn btn-primary w-25\">\u041D\u0430\u0437\u0430\u0434</button>\n    <table class=\"table table-hover\" style=\"font-style: normal;\">\n      <thead>\n        <tr>\n          <th scope=\"col\">Id</th>\n          <th scope=\"col\">\u0418\u043C\u044F</th>\n          <th scope=\"col\">\u041F\u0440\u0438\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435</th>\n          <th scope=\"col\">\u0423\u0434\u0430\u043B\u0438\u0442\u044C</th>\n        </tr>\n      </thead>\n      <tbody>\n        ".concat(users.filter(function (user) {
               return user.name;
             }).sort(function (user1, user2) {
               var value1 = user1.sendedValue ? user1.sendedValue.toLowerCase() : "";
@@ -4250,35 +4285,22 @@ window.includeAdminMode = function () {
               if (value1 < value2) return 1;
               return 0;
             }).map(function (user) {
-              return "\n        <tr>\n          <td>".concat(user.id, "</td>\n          <td>").concat(user.name, "</td>\n          <td>").concat(user.sendedValue, "</td>\n          <td>\n              <button data-delete-btn=\"").concat(user.id, "\" type=\"button\" class=\"btn btn-danger ml-3 w-100\">Delete</button>\n          </td>\n        </tr>\n        ");
+              return "\n        <tr>\n          <td>".concat(user.id, "</td>\n          <td>").concat(user.name, "</td>\n          <td>").concat(user.sendedValue ? user.sendedValue : "Не отвечено", "</td>\n          <td>\n              <button data-delete-btn=\"").concat(user.id, "\" type=\"button\" class=\"btn btn-danger ml-3 w-100\">Delete</button>\n          </td>\n        </tr>\n        ");
             }).join(""), "\n    </tbody>\n    </table>\n    </div>\n    ");
             backBtn = document.querySelector("[data-btn-back]");
-            allBtn = document.querySelector("[data-btn-all]");
             deleteBtns = document.querySelectorAll("[data-delete-btn]");
             backBtn.addEventListener("click", function () {
               return includeAdminMode();
             });
-            allBtn.addEventListener("click", function () {
-              var tableBody = document.querySelector("tbody");
-              tableBody.innerHTML = "\n      ".concat(users.sort(function (user1, user2) {
-                var value1 = user1.sendedValue ? user1.sendedValue.toLowerCase() : "";
-                var value2 = user2.sendedValue ? user2.sendedValue.toLowerCase() : "";
-                if (value1 > value2) return -1;
-                if (value1 < value2) return 1;
-                return 0;
-              }).map(function (user) {
-                return "\n      <tr>\n        <td>".concat(user.id, "</td>\n        <td>").concat(user.name, "</td>\n        <td>").concat(user.sendedValue, "</td>\n        <td>\n            <button data-delete-btn=\"").concat(user.id, "\" type=\"button\" class=\"btn btn-danger ml-3 w-100\">Delete</button>\n        </td>\n      </tr>\n      ");
-              }).join(""), "\n      ");
-            });
             Array.prototype.forEach.call(deleteBtns, function (btn) {
               return btn.addEventListener("click", /*#__PURE__*/function () {
-                var _ref2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().mark(function _callee(e) {
-                  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().wrap(function _callee$(_context) {
+                var _ref2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_5__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default().mark(function _callee(e) {
+                  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_7___default().wrap(function _callee$(_context) {
                     while (1) {
                       switch (_context.prev = _context.next) {
                         case 0:
                           _context.next = 2;
-                          return _user_service__WEBPACK_IMPORTED_MODULE_11__.default.delete(btn.dataset.deleteBtn);
+                          return _user_service__WEBPACK_IMPORTED_MODULE_17__.default.delete(btn.dataset.deleteBtn);
 
                         case 2:
                           listBtn.click();
@@ -4297,7 +4319,7 @@ window.includeAdminMode = function () {
               }());
             });
 
-          case 13:
+          case 12:
           case "end":
             return _context2.stop();
         }
