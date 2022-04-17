@@ -4,8 +4,9 @@ export default () =>
 
     const searchParams = new URLSearchParams(window.location.search);
     const id = searchParams.get("id");
-    user = titles.find((item) => item.id === id);
-    if (user) {
+    const _user = users.find((item) => item.id === id);
+    if (_user) {
+      user = _user;
       title.textContent = user.title;
     }
   });

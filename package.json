@@ -33,6 +33,7 @@
   "scripts": {
     "start": "node server.js",
     "startWebpack": "npx webpack --mode development",
+    "dev": "nodemon server.js",
     "build": "npx webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

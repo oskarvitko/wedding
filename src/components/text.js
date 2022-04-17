@@ -21,6 +21,7 @@ export default () =>
     };
 
     const type = user.type;
+    if (!type) return;
     Object.keys(sections).forEach((sectionName) => {
       Object.keys(sections[sectionName]).forEach((componentName) => {
         sections[sectionName][componentName].textContent =

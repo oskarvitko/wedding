@@ -68,37 +68,43 @@ const titlesSections = {
   },
 };
 
+const options = {
+  yes: "Конечно буду!",
+  withGirl: "Буду со второй половинкой",
+  withFamily: "Будем с семьей",
+  no: "К сожалению не получиться",
+};
+
 const url = `http://127.0.0.1:5500`;
 const publicUrl = "https://oskar-wedding.herokuapp.com";
 
-let user = null;
+let user = {};
 
-const titles = [
+const users = [
   {
     id: "oskar-father",
     name: "Папа оскара",
-    title: "Дорогой папа",
-    sendedValue: "Не будет",
-    sended: true,
+    title: "Дорогой папа Андрей",
     type: titleTypes.singleBoy,
   },
   {
     id: "oskar-mother",
     name: "Мама оскара",
-    title: "Дорогая мама",
+    title: "Дорогая мама Кристина",
     type: titleTypes.singleGirl,
   },
   {
     id: "friend-mattew",
     name: "Матвей",
     title: "Матвей, брат",
+    type: titleTypes.singleBoy,
   },
 ];
 
 const includeAdminMode = () => {
   document.body.innerHTML = `
   <div class="container text-center mt-5">
-  ${titles
+  ${users
     .map((title) => {
       const _url = `${publicUrl}?id=${title.id}`;
       return `

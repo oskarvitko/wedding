@@ -1,3 +1,5 @@
+import UserService from "./user-service";
+
 let sendBtn;
 let editBtn;
 let select;
@@ -5,7 +7,7 @@ let select;
 const URL = window.location.origin;
 
 export default () =>
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", async () => {
     sendBtn = document.getElementById("approve-btn-send");
     editBtn = document.getElementById("approve-btn-edit");
     select = document.getElementById("approve-select");
@@ -13,20 +15,13 @@ export default () =>
     sendBtn.addEventListener("click", sendHandler);
     editBtn.addEventListener("click", editHandler);
 
-    fetch(`${URL}/user/${user.id}`, {
-      method: "get",
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        user = {
-          ...user,
-          ...data,
-        };
+    const data = await UserService.getUserById(user.id);
+    user = {
+      ...user,
+      ...data,
+    };
 
-        user.sended ? applySendStyles() : applyEditStyles();
-      });
+    user?.sended ? applySendStyles() : applyEditStyles();
   });
 
 const applySendStyles = () => {
@@ -45,28 +40,20 @@ const applyEditStyles = () => {
   editBtn.classList.add("d-none");
 };
 
-const sendHandler = (e) => {
-  fetch(`${URL}/send/${user.id}`, {
-    method: "post",
-    body: JSON.stringify({
-      sendedValue: select.value,
-      name: user.name,
-      sended: true,
-    }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then(() => window.location.reload());
+const sendHandler = async (e) => {
+  user = await UserService.setUser({
+    id: user.id,
+    sendedValue: select.value,
+    sended: true,
+    name: user.name,
+  });
+  applySendStyles();
 };
 
-const editHandler = (e) => {
-  fetch(`${URL}/send/${user.id}`, {
-    method: "post",
-    body: JSON.stringify({
-      sended: false,
-    }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then(() => window.location.reload());
+const editHandler = async (e) => {
+  user = await UserService.setUser({
+    sended: false,
+    id: user.id,
+  });
+  applyEditStyles();
 };
