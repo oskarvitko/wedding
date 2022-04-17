@@ -88,12 +88,14 @@ window.users = [
     name: "Папа оскара",
     title: "Дорогой папа Андрей",
     type: titleTypes.singleBoy,
+    count: 1,
   },
   {
     id: "oskar-mother",
     name: "Мама оскара",
     title: "Дорогая мама Кристина",
     type: titleTypes.singleGirl,
+    count: 1,
   },
   {
     id: "elisey",
@@ -101,6 +103,7 @@ window.users = [
     title: "Дорогие Елисей и Катя",
     type: titleTypes.plural,
     options: [options.withFamily],
+    count: 3,
   },
   {
     id: "arseniy",
@@ -108,18 +111,21 @@ window.users = [
     title: "Арсений, брат",
     type: titleTypes.singleBoy,
     options: [options.withGirl],
+    count: 2,
   },
   {
     id: "virsaviya",
     name: "Вирсавия",
     title: "Дорогая Вирсавия",
     type: titleTypes.singleGirl,
+    count: 1,
   },
   {
     id: "ameliya",
     name: "Амелия",
     title: "Дорогая Амелия",
     type: titleTypes.singleGirl,
+    count: 1,
   },
   {
     id: "ahnessa-parents",
@@ -127,18 +133,21 @@ window.users = [
     title: "Дорогие мама Елена и отец Сергей",
     type: titleTypes.plural,
     options: [options.withFamily],
+    count: 3,
   },
   {
     id: "pastor-alexiy",
     name: "Алексий",
     title: "Пастор Алексий",
     type: titleTypes.singleBoy,
+    count: 1,
   },
   {
     id: "nastya",
     name: "Настя",
     title: "Настюшка - опасность",
     type: titleTypes.singleGirl,
+    count: 1,
   },
   {
     id: "mozgoviy-family",
@@ -146,42 +155,49 @@ window.users = [
     title: "Дорогие Елена и Кирилл",
     type: titleTypes.plural,
     options: [options.withFamily],
+    count: 6,
   },
   {
     id: "eduarda",
     name: "Эда",
     title: "Эдочка, дорогая",
     type: titleTypes.singleGirl,
+    count: 1,
   },
   {
     id: "milana",
     name: "Милана Мозговая",
     title: "Дорогая Милана",
     type: titleTypes.singleGirl,
+    count: 1,
   },
   {
     id: "diana",
     name: "Диана Мозговая",
     title: "Дорогая Диана",
     type: titleTypes.singleGirl,
+    count: 1,
   },
   {
     id: "lera",
     name: "Лера Мозговая",
     title: "Лерон, систр",
     type: titleTypes.singleGirl,
+    count: 1,
   },
   {
     id: "danik",
     name: "Чернов Даниил",
     title: "Даник, брат, очкошник",
     type: titleTypes.singleBoy,
+    count: 1,
   },
   {
     id: "mattwey-chernov",
     name: "Чернов Матвей",
     title: "Матвей, брат, черножопик",
     type: titleTypes.singleBoy,
+    count: 1,
   },
   {
     id: "katya-chernova",
@@ -189,6 +205,7 @@ window.users = [
     title: "Дорогие Екатерина и Виталик",
     type: titleTypes.plural,
     options: [options.withFamily],
+    count: 3,
   },
   {
     id: "nadya-chernova",
@@ -196,6 +213,7 @@ window.users = [
     title: "Дорогие Надя и Андрей",
     type: titleTypes.plural,
     options: [options.withFamily],
+    count: 4,
   },
   {
     id: "tetya-natasha",
@@ -203,6 +221,7 @@ window.users = [
     title: "Тётя Наташа, дорогая",
     type: titleTypes.plural,
     single: true,
+    count: 1,
   },
   {
     id: "sydor-family",
@@ -210,12 +229,14 @@ window.users = [
     title: "Дорогие Андрей и Алла",
     type: titleTypes.plural,
     options: [options.withFamily],
+    count: 6,
   },
   {
     id: "sydor-marta",
     name: "Марта Сидор",
     title: "Дорогие Марта и Костя",
     type: titleTypes.plural,
+    count: 2,
   },
   {
     id: "oskar-babushka-vera",
@@ -223,6 +244,7 @@ window.users = [
     title: "Дорогие бабушка и дедушка!",
     type: titleTypes.plural,
     options: [options.withFamily],
+    count: 3,
   },
   {
     id: "oskar-babushka-lida",
@@ -230,6 +252,7 @@ window.users = [
     title: "Дорогие бабушка и дедушка!",
     type: titleTypes.plural,
     options: [options.withFamily],
+    count: 2,
   },
   {
     id: "ahnessa-babushka",
@@ -237,54 +260,63 @@ window.users = [
     title: "Дорогая бабушка!",
     type: titleTypes.plural,
     single: true,
+    count: 1,
   },
   {
     id: "mattwey",
     name: "Матвей",
     title: "Матвей, бро, любимый",
     type: titleTypes.singleBoy,
+    count: 1,
   },
   {
     id: "john",
     name: "Иоанн",
     title: "Иоанн, бро",
     type: titleTypes.singleBoy,
+    count: 1,
   },
   {
     id: "masha",
     name: "Машка",
     title: "Машка, дорогая",
     type: titleTypes.singleGirl,
+    count: 1,
   },
   {
     id: "milana-vitkovskaya",
     name: "Милана Витковская",
     title: "Милана, подружка",
     type: titleTypes.singleGirl,
+    count: 1,
   },
   {
     id: "pasha-b",
     name: "Паша Барсук",
     title: "Дорогой наш друг и мой лидер",
     type: titleTypes.singleBoy,
+    count: 1,
   },
   {
     id: "irina",
     name: "Ира",
     title: "Ирок, солнце",
     type: titleTypes.singleGirl,
+    count: 1,
   },
   {
     id: "bonduelle",
     name: "Богдан",
     title: "Богдан, дорогой наш",
     type: titleTypes.singleBoy,
+    count: 1,
   },
   {
     id: "ignat",
     name: "Игнат",
     title: "Игнат, друголёк",
     type: titleTypes.singleBoy,
+    count: 1,
   },
   {
     id: "nikita",
@@ -292,6 +324,7 @@ window.users = [
     title: "Никита, бро",
     type: titleTypes.singleBoy,
     options: [options.withGirl],
+    count: 2,
   },
   {
     id: "julya",
@@ -299,18 +332,21 @@ window.users = [
     title: "Дорогие Антон и Юля",
     type: titleTypes.plural,
     options: [options.withFamily],
+    count: 4,
   },
   {
     id: "abigail",
     name: "Авигея",
     title: "Дорогая Авигея",
     type: titleTypes.singleGirl,
+    count: 1,
   },
   {
     id: "yan",
     name: "Янчик",
     title: "Дорогой друг и лидер домашки",
     type: titleTypes.singleBoy,
+    count: 1,
   },
 ];
 
@@ -373,14 +409,22 @@ window.includeAdminMode = () => {
     });
 
     document.body.innerHTML = `
-    <div class="container mt-2">
+    <div class="container mt-2" style="font-style: normal;">
     <button data-btn-back type="button" class="btn btn-primary w-25">Назад</button>
-    <table class="table table-hover" style="font-style: normal;">
+    <h6 class="my-2">Общее предположительное количество: ${users.reduce(
+      (result, user) => {
+        result += user.count;
+        return result;
+      },
+      0
+    )}</h6>
+    <table class="table table-hover">
       <thead>
         <tr>
           <th scope="col">Id</th>
           <th scope="col">Имя</th>
           <th scope="col">Присутствие</th>
+          <th scope="col">Кол-во человек</th>
           <th scope="col">Удалить</th>
         </tr>
       </thead>
@@ -404,6 +448,7 @@ window.includeAdminMode = () => {
           <td>${user.id}</td>
           <td>${user.name}</td>
           <td>${user.sendedValue ? user.sendedValue : "Не отвечено"}</td>
+          <td>${user.count}</td>
           <td>
               <button data-delete-btn="${
                 user.id

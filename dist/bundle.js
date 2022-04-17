@@ -4014,11 +4014,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! core-js/modules/es.array.find.js */ "./node_modules/core-js/modules/es.array.find.js");
 /* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! core-js/modules/es.array.sort.js */ "./node_modules/core-js/modules/es.array.sort.js");
-/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! core-js/modules/es.array.filter.js */ "./node_modules/core-js/modules/es.array.filter.js");
-/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./user-service */ "./src/components/user-service.js");
+/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! core-js/modules/es.array.reduce.js */ "./node_modules/core-js/modules/es.array.reduce.js");
+/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! core-js/modules/es.array.sort.js */ "./node_modules/core-js/modules/es.array.sort.js");
+/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! core-js/modules/es.array.filter.js */ "./node_modules/core-js/modules/es.array.filter.js");
+/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./user-service */ "./src/components/user-service.js");
 
 
 
@@ -4034,6 +4036,7 @@ var _dear, _dress, _approve, _gift, _contacts;
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__.default)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
 
 
 
@@ -4106,195 +4109,231 @@ window.users = [{
   id: "oskar-father",
   name: "Папа оскара",
   title: "Дорогой папа Андрей",
-  type: titleTypes.singleBoy
+  type: titleTypes.singleBoy,
+  count: 1
 }, {
   id: "oskar-mother",
   name: "Мама оскара",
   title: "Дорогая мама Кристина",
-  type: titleTypes.singleGirl
+  type: titleTypes.singleGirl,
+  count: 1
 }, {
   id: "elisey",
   name: "Елисей",
   title: "Дорогие Елисей и Катя",
   type: titleTypes.plural,
-  options: [options.withFamily]
+  options: [options.withFamily],
+  count: 3
 }, {
   id: "arseniy",
   name: "Арсений",
   title: "Арсений, брат",
   type: titleTypes.singleBoy,
-  options: [options.withGirl]
+  options: [options.withGirl],
+  count: 2
 }, {
   id: "virsaviya",
   name: "Вирсавия",
   title: "Дорогая Вирсавия",
-  type: titleTypes.singleGirl
+  type: titleTypes.singleGirl,
+  count: 1
 }, {
   id: "ameliya",
   name: "Амелия",
   title: "Дорогая Амелия",
-  type: titleTypes.singleGirl
+  type: titleTypes.singleGirl,
+  count: 1
 }, {
   id: "ahnessa-parents",
   name: "Родители Агнессы",
   title: "Дорогие мама Елена и отец Сергей",
   type: titleTypes.plural,
-  options: [options.withFamily]
+  options: [options.withFamily],
+  count: 3
 }, {
   id: "pastor-alexiy",
   name: "Алексий",
   title: "Пастор Алексий",
-  type: titleTypes.singleBoy
+  type: titleTypes.singleBoy,
+  count: 1
 }, {
   id: "nastya",
   name: "Настя",
   title: "Настюшка - опасность",
-  type: titleTypes.singleGirl
+  type: titleTypes.singleGirl,
+  count: 1
 }, {
   id: "mozgoviy-family",
   name: "Семья мозговых",
   title: "Дорогие Елена и Кирилл",
   type: titleTypes.plural,
-  options: [options.withFamily]
+  options: [options.withFamily],
+  count: 6
 }, {
   id: "eduarda",
   name: "Эда",
   title: "Эдочка, дорогая",
-  type: titleTypes.singleGirl
+  type: titleTypes.singleGirl,
+  count: 1
 }, {
   id: "milana",
   name: "Милана Мозговая",
   title: "Дорогая Милана",
-  type: titleTypes.singleGirl
+  type: titleTypes.singleGirl,
+  count: 1
 }, {
   id: "diana",
   name: "Диана Мозговая",
   title: "Дорогая Диана",
-  type: titleTypes.singleGirl
+  type: titleTypes.singleGirl,
+  count: 1
 }, {
   id: "lera",
   name: "Лера Мозговая",
   title: "Лерон, систр",
-  type: titleTypes.singleGirl
+  type: titleTypes.singleGirl,
+  count: 1
 }, {
   id: "danik",
   name: "Чернов Даниил",
   title: "Даник, брат, очкошник",
-  type: titleTypes.singleBoy
+  type: titleTypes.singleBoy,
+  count: 1
 }, {
   id: "mattwey-chernov",
   name: "Чернов Матвей",
   title: "Матвей, брат, черножопик",
-  type: titleTypes.singleBoy
+  type: titleTypes.singleBoy,
+  count: 1
 }, {
   id: "katya-chernova",
   name: "Чернова Катя",
   title: "Дорогие Екатерина и Виталик",
   type: titleTypes.plural,
-  options: [options.withFamily]
+  options: [options.withFamily],
+  count: 3
 }, {
   id: "nadya-chernova",
   name: "Чернова Надя",
   title: "Дорогие Надя и Андрей",
   type: titleTypes.plural,
-  options: [options.withFamily]
+  options: [options.withFamily],
+  count: 4
 }, {
   id: "tetya-natasha",
   name: "Тётя Наташа Чернова",
   title: "Тётя Наташа, дорогая",
   type: titleTypes.plural,
-  single: true
+  single: true,
+  count: 1
 }, {
   id: "sydor-family",
   name: "Сидоры",
   title: "Дорогие Андрей и Алла",
   type: titleTypes.plural,
-  options: [options.withFamily]
+  options: [options.withFamily],
+  count: 6
 }, {
   id: "sydor-marta",
   name: "Марта Сидор",
   title: "Дорогие Марта и Костя",
-  type: titleTypes.plural
+  type: titleTypes.plural,
+  count: 2
 }, {
   id: "oskar-babushka-vera",
   name: "Бабушка Вера Оскара",
   title: "Дорогие бабушка и дедушка!",
   type: titleTypes.plural,
-  options: [options.withFamily]
+  options: [options.withFamily],
+  count: 3
 }, {
   id: "oskar-babushka-lida",
   name: "Бабушка Лида Оскара",
   title: "Дорогие бабушка и дедушка!",
   type: titleTypes.plural,
-  options: [options.withFamily]
+  options: [options.withFamily],
+  count: 2
 }, {
   id: "ahnessa-babushka",
   name: "Бабушка Агнессы",
   title: "Дорогая бабушка!",
   type: titleTypes.plural,
-  single: true
+  single: true,
+  count: 1
 }, {
   id: "mattwey",
   name: "Матвей",
   title: "Матвей, бро, любимый",
-  type: titleTypes.singleBoy
+  type: titleTypes.singleBoy,
+  count: 1
 }, {
   id: "john",
   name: "Иоанн",
   title: "Иоанн, бро",
-  type: titleTypes.singleBoy
+  type: titleTypes.singleBoy,
+  count: 1
 }, {
   id: "masha",
   name: "Машка",
   title: "Машка, дорогая",
-  type: titleTypes.singleGirl
+  type: titleTypes.singleGirl,
+  count: 1
 }, {
   id: "milana-vitkovskaya",
   name: "Милана Витковская",
   title: "Милана, подружка",
-  type: titleTypes.singleGirl
+  type: titleTypes.singleGirl,
+  count: 1
 }, {
   id: "pasha-b",
   name: "Паша Барсук",
   title: "Дорогой наш друг и мой лидер",
-  type: titleTypes.singleBoy
+  type: titleTypes.singleBoy,
+  count: 1
 }, {
   id: "irina",
   name: "Ира",
   title: "Ирок, солнце",
-  type: titleTypes.singleGirl
+  type: titleTypes.singleGirl,
+  count: 1
 }, {
   id: "bonduelle",
   name: "Богдан",
   title: "Богдан, дорогой наш",
-  type: titleTypes.singleBoy
+  type: titleTypes.singleBoy,
+  count: 1
 }, {
   id: "ignat",
   name: "Игнат",
   title: "Игнат, друголёк",
-  type: titleTypes.singleBoy
+  type: titleTypes.singleBoy,
+  count: 1
 }, {
   id: "nikita",
   name: "Никита",
   title: "Никита, бро",
   type: titleTypes.singleBoy,
-  options: [options.withGirl]
+  options: [options.withGirl],
+  count: 2
 }, {
   id: "julya",
   name: "Юля и Антон",
   title: "Дорогие Антон и Юля",
   type: titleTypes.plural,
-  options: [options.withFamily]
+  options: [options.withFamily],
+  count: 4
 }, {
   id: "abigail",
   name: "Авигея",
   title: "Дорогая Авигея",
-  type: titleTypes.singleGirl
+  type: titleTypes.singleGirl,
+  count: 1
 }, {
   id: "yan",
   name: "Янчик",
   title: "Дорогой друг и лидер домашки",
-  type: titleTypes.singleBoy
+  type: titleTypes.singleBoy,
+  count: 1
 }];
 
 window.includeAdminMode = function () {
@@ -4338,7 +4377,10 @@ window.includeAdminMode = function () {
 
               return user;
             });
-            document.body.innerHTML = "\n    <div class=\"container mt-2\">\n    <button data-btn-back type=\"button\" class=\"btn btn-primary w-25\">\u041D\u0430\u0437\u0430\u0434</button>\n    <table class=\"table table-hover\" style=\"font-style: normal;\">\n      <thead>\n        <tr>\n          <th scope=\"col\">Id</th>\n          <th scope=\"col\">\u0418\u043C\u044F</th>\n          <th scope=\"col\">\u041F\u0440\u0438\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435</th>\n          <th scope=\"col\">\u0423\u0434\u0430\u043B\u0438\u0442\u044C</th>\n        </tr>\n      </thead>\n      <tbody>\n        ".concat(users.filter(function (user) {
+            document.body.innerHTML = "\n    <div class=\"container mt-2\" style=\"font-style: normal;\">\n    <button data-btn-back type=\"button\" class=\"btn btn-primary w-25\">\u041D\u0430\u0437\u0430\u0434</button>\n    <h6 class=\"my-2\">\u041E\u0431\u0449\u0435\u0435 \u043F\u0440\u0435\u0434\u043F\u043E\u043B\u043E\u0436\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0435 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E: ".concat(users.reduce(function (result, user) {
+              result += user.count;
+              return result;
+            }, 0), "</h6>\n    <table class=\"table table-hover\">\n      <thead>\n        <tr>\n          <th scope=\"col\">Id</th>\n          <th scope=\"col\">\u0418\u043C\u044F</th>\n          <th scope=\"col\">\u041F\u0440\u0438\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435</th>\n          <th scope=\"col\">\u041A\u043E\u043B-\u0432\u043E \u0447\u0435\u043B\u043E\u0432\u0435\u043A</th>\n          <th scope=\"col\">\u0423\u0434\u0430\u043B\u0438\u0442\u044C</th>\n        </tr>\n      </thead>\n      <tbody>\n        ").concat(users.filter(function (user) {
               return user.name;
             }).sort(function (user1, user2) {
               var value1 = user1.sendedValue ? user1.sendedValue.toLowerCase() : "";
@@ -4347,7 +4389,7 @@ window.includeAdminMode = function () {
               if (value1 < value2) return 1;
               return 0;
             }).map(function (user) {
-              return "\n        <tr>\n          <td>".concat(user.id, "</td>\n          <td>").concat(user.name, "</td>\n          <td>").concat(user.sendedValue ? user.sendedValue : "Не отвечено", "</td>\n          <td>\n              <button data-delete-btn=\"").concat(user.id, "\" type=\"button\" class=\"btn btn-danger ml-3 w-100\">Delete</button>\n          </td>\n        </tr>\n        ");
+              return "\n        <tr>\n          <td>".concat(user.id, "</td>\n          <td>").concat(user.name, "</td>\n          <td>").concat(user.sendedValue ? user.sendedValue : "Не отвечено", "</td>\n          <td>").concat(user.count, "</td>\n          <td>\n              <button data-delete-btn=\"").concat(user.id, "\" type=\"button\" class=\"btn btn-danger ml-3 w-100\">Delete</button>\n          </td>\n        </tr>\n        ");
             }).join(""), "\n    </tbody>\n    </table>\n    </div>\n    ");
             backBtn = document.querySelector("[data-btn-back]");
             deleteBtns = document.querySelectorAll("[data-delete-btn]");
@@ -4362,7 +4404,7 @@ window.includeAdminMode = function () {
                       switch (_context.prev = _context.next) {
                         case 0:
                           _context.next = 2;
-                          return _user_service__WEBPACK_IMPORTED_MODULE_17__.default.delete(btn.dataset.deleteBtn);
+                          return _user_service__WEBPACK_IMPORTED_MODULE_18__.default.delete(btn.dataset.deleteBtn);
 
                         case 2:
                           listBtn.click();
@@ -10069,6 +10111,56 @@ module.exports = function (METHOD_NAME, argument) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/array-reduce.js":
+/*!********************************************************!*\
+  !*** ./node_modules/core-js/internals/array-reduce.js ***!
+  \********************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var aFunction = __webpack_require__(/*! ../internals/a-function */ "./node_modules/core-js/internals/a-function.js");
+var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
+var IndexedObject = __webpack_require__(/*! ../internals/indexed-object */ "./node_modules/core-js/internals/indexed-object.js");
+var toLength = __webpack_require__(/*! ../internals/to-length */ "./node_modules/core-js/internals/to-length.js");
+
+// `Array.prototype.{ reduce, reduceRight }` methods implementation
+var createMethod = function (IS_RIGHT) {
+  return function (that, callbackfn, argumentsLength, memo) {
+    aFunction(callbackfn);
+    var O = toObject(that);
+    var self = IndexedObject(O);
+    var length = toLength(O.length);
+    var index = IS_RIGHT ? length - 1 : 0;
+    var i = IS_RIGHT ? -1 : 1;
+    if (argumentsLength < 2) while (true) {
+      if (index in self) {
+        memo = self[index];
+        index += i;
+        break;
+      }
+      index += i;
+      if (IS_RIGHT ? index < 0 : length <= index) {
+        throw TypeError('Reduce of empty array with no initial value');
+      }
+    }
+    for (;IS_RIGHT ? index >= 0 : length > index; index += i) if (index in self) {
+      memo = callbackfn(memo, self[index], index, O);
+    }
+    return memo;
+  };
+};
+
+module.exports = {
+  // `Array.prototype.reduce` method
+  // https://tc39.es/ecma262/#sec-array.prototype.reduce
+  left: createMethod(false),
+  // `Array.prototype.reduceRight` method
+  // https://tc39.es/ecma262/#sec-array.prototype.reduceright
+  right: createMethod(true)
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/array-sort.js":
 /*!******************************************************!*\
   !*** ./node_modules/core-js/internals/array-sort.js ***!
@@ -13681,6 +13773,36 @@ var HAS_SPECIES_SUPPORT = arrayMethodHasSpeciesSupport('map');
 $({ target: 'Array', proto: true, forced: !HAS_SPECIES_SUPPORT }, {
   map: function map(callbackfn /* , thisArg */) {
     return $map(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/es.array.reduce.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.array.reduce.js ***!
+  \*********************************************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var $reduce = __webpack_require__(/*! ../internals/array-reduce */ "./node_modules/core-js/internals/array-reduce.js").left;
+var arrayMethodIsStrict = __webpack_require__(/*! ../internals/array-method-is-strict */ "./node_modules/core-js/internals/array-method-is-strict.js");
+var CHROME_VERSION = __webpack_require__(/*! ../internals/engine-v8-version */ "./node_modules/core-js/internals/engine-v8-version.js");
+var IS_NODE = __webpack_require__(/*! ../internals/engine-is-node */ "./node_modules/core-js/internals/engine-is-node.js");
+
+var STRICT_METHOD = arrayMethodIsStrict('reduce');
+// Chrome 80-82 has a critical bug
+// https://bugs.chromium.org/p/chromium/issues/detail?id=1049982
+var CHROME_BUG = !IS_NODE && CHROME_VERSION > 79 && CHROME_VERSION < 83;
+
+// `Array.prototype.reduce` method
+// https://tc39.es/ecma262/#sec-array.prototype.reduce
+$({ target: 'Array', proto: true, forced: !STRICT_METHOD || CHROME_BUG }, {
+  reduce: function reduce(callbackfn /* , initialValue */) {
+    return $reduce(this, callbackfn, arguments.length, arguments.length > 1 ? arguments[1] : undefined);
   }
 });
 
