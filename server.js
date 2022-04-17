@@ -47,7 +47,7 @@ app.post("/send/:id", (req, res) => {
   if (user) {
     const message = `
   Гость: ${user.name}
-  Присутствие: ${user.sendedValue}`;
+Присутствие: ${user.sendedValue}`;
 
     console.log(message);
 
