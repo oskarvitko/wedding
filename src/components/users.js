@@ -238,6 +238,80 @@ window.users = [
     type: titleTypes.plural,
     single: true,
   },
+  {
+    id: "mattwey",
+    name: "Матвей",
+    title: "Матвей, бро, любимый",
+    type: titleTypes.singleBoy,
+  },
+  {
+    id: "john",
+    name: "Иоанн",
+    title: "Иоанн, бро",
+    type: titleTypes.singleBoy,
+  },
+  {
+    id: "masha",
+    name: "Машка",
+    title: "Машка, дорогая",
+    type: titleTypes.singleGirl,
+  },
+  {
+    id: "milana-vitkovskaya",
+    name: "Милана Витковская",
+    title: "Милана, подружка",
+    type: titleTypes.singleGirl,
+  },
+  {
+    id: "pasha-b",
+    name: "Паша Барсук",
+    title: "Дорогой наш друг и мой лидер",
+    type: titleTypes.singleBoy,
+  },
+  {
+    id: "irina",
+    name: "Ира",
+    title: "Ирок, солнце",
+    type: titleTypes.singleGirl,
+  },
+  {
+    id: "bonduelle",
+    name: "Богдан",
+    title: "Богдан, дорогой наш",
+    type: titleTypes.singleBoy,
+  },
+  {
+    id: "ignat",
+    name: "Игнат",
+    title: "Игнат, друголёк",
+    type: titleTypes.singleBoy,
+  },
+  {
+    id: "nikita",
+    name: "Никита",
+    title: "Никита, бро",
+    type: titleTypes.singleBoy,
+    options: [options.withGirl],
+  },
+  {
+    id: "julya",
+    name: "Юля и Антон",
+    title: "Дорогие Антон и Юля",
+    type: titleTypes.plural,
+    options: [options.withFamily],
+  },
+  {
+    id: "abigail",
+    name: "Авигея",
+    title: "Дорогая Авигея",
+    type: titleTypes.singleGirl,
+  },
+  {
+    id: "yan",
+    name: "Янчик",
+    title: "Дорогой друг и лидер домашки",
+    type: titleTypes.singleBoy,
+  },
 ];
 
 window.includeAdminMode = () => {
